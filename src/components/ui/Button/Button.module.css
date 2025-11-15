@@ -1,0 +1,89 @@
+/* Button styles */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-4);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: var(--radius-39);
+  white-space: nowrap;
+}
+
+.button--outline {
+  border: 2px solid var(--color-black-700);
+  background: transparent;
+  color: var(--color-black-700);
+}
+
+.button--outline:hover {
+  background: var(--color-black-700);
+  color: var(--color-white);
+}
+
+.button--filled {
+  border: 2px solid var(--color-black-700);
+  background: var(--color-black-700);
+  color: var(--color-white);
+}
+
+.button--filled:hover {
+  opacity: 0.9;
+}
+
+.button--icon-only {
+  border: 2px solid var(--color-black-500);
+  background: transparent;
+  color: var(--color-black-500);
+  border-radius: var(--radius-100);
+  width: 58px;
+  height: 58px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button--icon-only:hover {
+  border-color: var(--color-black-700);
+  color: var(--color-black-700);
+}
+
+/* Sizes */
+.button--large {
+  padding: 12px 28px;
+  font-size: 20px;
+  line-height: 34px;
+  letter-spacing: -0.2px;
+}
+
+.button--medium {
+  padding: 12px 28px;
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: -0.2px;
+}
+
+.button--small {
+  padding: 10px 20px;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.button--xSmall {
+  padding: 4px 14px;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.button__text {
+  display: inline-block;
+}
+
+.button__icon {
+  flex-shrink: 0;
+}
+

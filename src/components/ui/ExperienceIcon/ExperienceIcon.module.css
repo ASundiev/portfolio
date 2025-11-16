@@ -1,0 +1,8 @@
+.experienceIcon {
+  color: var(--color-black-700);
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+

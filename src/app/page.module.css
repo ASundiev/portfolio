@@ -14,12 +14,14 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: var(--spacing-40) var(--spacing-160) var(--spacing-136);
+  padding: var(--spacing-32) 0 var(--spacing-136);
+  min-height: 100vh;
   box-sizing: border-box;
 }
 
 .hero__container {
   width: 100%;
+  max-width: 1280px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -115,14 +117,17 @@
   background: var(--color-orange-300);
   width: 100%;
   padding: var(--spacing-88) var(--spacing-240);
-  box-sizing: border-box;
+  display: flex;
+  gap: var(--spacing-8);
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .whyMe__content {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-16);
-  width: 100%;
+  flex: 1;
 }
 
 .whyMe__header {
@@ -153,38 +158,40 @@
   background: var(--color-white);
   width: 100%;
   padding: var(--spacing-80) var(--spacing-80) 0;
-  box-sizing: border-box;
+  display: flex;
+  gap: var(--spacing-8);
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .portfolioPreview__content {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-40);
-  width: 100%;
+  gap: var(--spacing-51);
+  flex: 1;
+  align-items: center;
 }
 
 .portfolioPreview__cards {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-32);
+  gap: var(--spacing-51);
   width: 100%;
 }
 
-.portfolioPreview__cards :global(.portfolioCard) {
-  margin-bottom: 0;
-}
-
 .portfolioPreview__button {
-  margin-top: var(--spacing-32);
-  align-self: center;
+  margin-top: var(--spacing-16);
 }
 
 /* Experience Section */
 .experience {
   background: var(--color-white);
   width: 100%;
-  padding: var(--spacing-80) var(--spacing-160);
-  box-sizing: border-box;
+  padding: var(--spacing-80) 0;
+  display: flex;
+  gap: var(--spacing-32);
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .experience__content {
@@ -192,25 +199,33 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-40);
-  padding: var(--spacing-56) var(--spacing-80);
+  padding: var(--spacing-80) var(--spacing-80);
   width: 100%;
-  box-sizing: border-box;
+  align-items: center;
 }
 
 .experience__grid {
+  display: flex;
+  gap: var(--spacing-64);
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-32);
-}
-
-.experience__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  max-width: 1280px;
+  align-items: flex-start;
 }
 
 .experience__title {
+  display: flex;
+  gap: var(--spacing-8);
+  align-items: center;
+  width: 320px;
+  justify-content: flex-start;
+  flex-shrink: 0;
+}
+
+.experience__icon {
+  color: var(--color-black-700);
+}
+
+.experience__label {
   font-size: 16px;
   font-weight: 400;
   line-height: 26px;
@@ -222,6 +237,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-24);
+  flex: 1;
   width: 100%;
 }
 
@@ -235,7 +251,13 @@
   background: var(--color-white);
   width: 100%;
   padding: 0 var(--spacing-80) var(--spacing-80);
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-48);
+  align-items: center;
+  justify-content: center;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .articles__content {
@@ -256,15 +278,16 @@
 @media (max-width: 1024px) {
   .hero {
     min-height: auto;
-    padding: var(--spacing-32) var(--spacing-24) var(--spacing-80);
+    padding: var(--spacing-32) 0 var(--spacing-80);
   }
 
   .hero__container {
     gap: var(--spacing-48);
+    padding: 0 var(--spacing-24);
   }
 
   .hero__content {
-    padding: 0;
+    padding: 0 var(--spacing-24);
   }
 
   .hero__subtitle {
@@ -274,28 +297,15 @@
   }
 
   .whyMe {
-    padding: var(--spacing-56) 0;
-  }
-
-  .whyMe,
-  .portfolioPreview,
-  .experience,
-  .articles {
-    padding-left: var(--spacing-24);
-    padding-right: var(--spacing-24);
+    padding: var(--spacing-40) var(--spacing-24);
   }
 
   .portfolioPreview {
-    padding-top: var(--spacing-56);
-  }
-
-  .experience {
-    padding-top: var(--spacing-56);
-    padding-bottom: var(--spacing-56);
+    padding: var(--spacing-56) var(--spacing-24) 0;
   }
 
   .experience__content {
-    padding: var(--spacing-40) var(--spacing-24);
+    padding: var(--spacing-56) var(--spacing-24);
   }
 
   .experience__grid {
@@ -308,8 +318,7 @@
   }
 
   .articles {
-    padding-top: 0;
-    padding-bottom: var(--spacing-56);
+    padding: 0 var(--spacing-24) var(--spacing-56);
   }
 
   .articles__grid {
@@ -318,8 +327,8 @@
 }
 
 @media (max-width: 768px) {
-  .hero {
-    padding: var(--spacing-32) var(--spacing-16) var(--spacing-56);
+  .hero__container {
+    padding: 0 var(--spacing-16);
   }
 
   .hero__firstName,
@@ -340,30 +349,12 @@
     line-height: 28px;
   }
 
-  .whyMe,
-  .portfolioPreview,
-  .experience,
-  .articles {
-    padding-left: var(--spacing-16);
-    padding-right: var(--spacing-16);
-  }
-
   .whyMe {
-    padding-top: var(--spacing-40);
-    padding-bottom: var(--spacing-32);
-  }
-
-  .portfolioPreview {
-    padding-top: var(--spacing-40);
-  }
-
-  .experience {
-    padding-top: var(--spacing-40);
-    padding-bottom: var(--spacing-40);
+    padding: var(--spacing-40) var(--spacing-16);
   }
 
   .experience__content {
-    padding: var(--spacing-32) var(--spacing-16);
+    padding: var(--spacing-40) var(--spacing-16);
   }
 
   .experience__list {

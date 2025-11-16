@@ -3,17 +3,22 @@
 import React from 'react';
 import { ArrowUpRight } from 'phosphor-react';
 import styles from './Button.module.css';
-import { typography } from '@/tokens';
 
 export type ButtonVariant = 'outline' | 'filled' | 'icon-only';
 export type ButtonSize = 'large' | 'medium' | 'small' | 'xSmall';
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps {
   variant?: ButtonVariant;
   size?: ButtonSize;
   children?: React.ReactNode;
   showArrow?: boolean;
   href?: string;
+  target?: string;
+  rel?: string;
+  className?: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = ({

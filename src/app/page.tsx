@@ -7,6 +7,7 @@ import { SectionHeader } from '@/components/ui/SectionHeader';
 import { PortfolioCard } from '@/components/cards/PortfolioCard';
 import { ExperienceItem } from '@/components/cards/ExperienceItem';
 import { ArticleCard } from '@/components/cards/ArticleCard';
+import { ExperienceIcon } from '@/components/ui/ExperienceIcon';
 import { imagePaths } from '@/data/images';
 import styles from './page.module.css';
 
@@ -95,8 +96,14 @@ export default function Home() {
       </section>
 
       {/* Portfolio Preview Section */}
-      <section className={styles.portfolioPreview} id="portfolio" aria-label="Case studies">
+      <section className={styles.portfolioPreview} id="portfolio">
         <div className={styles.portfolioPreview__content}>
+          <SectionHeader
+            title="Case studies"
+            alignment="center"
+            size="big"
+            className={styles.portfolioPreview__header}
+          />
           <div className={styles.portfolioPreview__cards}>
             <PortfolioCard
               title="Building a high-performing Product & Marketing design org"
@@ -135,16 +142,9 @@ export default function Home() {
       <section className={styles.experience} id="experience">
         <div className={styles.experience__content}>
           <div className={styles.experience__grid}>
-            <div className={styles.experience__header}>
-              <span className={styles.experience__title}>E X P E R I E N C E</span>
-              <Button
-                variant="filled"
-                size="xSmall"
-                href="https://www.udrop.com/file/O1sr/Andrei-Sundiev_CV.pdf"
-                className={styles.experience__button}
-              >
-                Download full CV
-              </Button>
+            <div className={styles.experience__title}>
+              <ExperienceIcon className={styles.experience__icon} />
+              <span className={styles.experience__label}>E X P E R I E N C E</span>
             </div>
             <div className={styles.experience__list}>
               <ExperienceItem
@@ -152,7 +152,6 @@ export default function Home() {
                 company="Beamery"
                 period="2021 — Current"
                 defaultOpen={true}
-                isInteractive
                 description="Overseeing Product Design and Marketing Design functions. Spearheading the AI-first transformation of the EPD department. Developing and propagating Product & Design strategy as a part of the Senior Leadership Team."
                 achievements={[
                   "Inspired an active phase of work on the company's flagship conversational AI product.",
@@ -166,22 +165,27 @@ export default function Home() {
                 title="Creative Director"
                 company="Walmart"
                 period="2019 — 2022"
-                isInteractive={false}
               />
               <ExperienceItem
                 title="Lead Designer"
                 company="Revolut"
                 period="2017 — 2019"
-                isInteractive={false}
               />
               <ExperienceItem
                 title="Head of Design"
                 company="UI/UX"
                 period="2015 — 2017"
-                isInteractive={false}
               />
             </div>
           </div>
+          <Button
+            variant="filled"
+            size="xSmall"
+            href="https://www.udrop.com/file/O1sr/Andrei-Sundiev_CV.pdf"
+            className={styles.experience__button}
+          >
+            Download full CV
+          </Button>
         </div>
       </section>
 

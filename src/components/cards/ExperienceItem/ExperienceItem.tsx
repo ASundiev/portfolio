@@ -12,7 +12,6 @@ export interface ExperienceItemProps {
   achievements?: string[];
   className?: string;
   defaultOpen?: boolean;
-  isInteractive?: boolean;
 }
 
 export const ExperienceItem: React.FC<ExperienceItemProps> = ({
@@ -23,28 +22,20 @@ export const ExperienceItem: React.FC<ExperienceItemProps> = ({
   achievements,
   className = '',
   defaultOpen = false,
-  isInteractive = true,
 }) => {
-  const initialOpen = defaultOpen && isInteractive;
-  const [isOpen, setIsOpen] = useState(initialOpen);
+  const [isOpen, setIsOpen] = useState(defaultOpen);
 
   const toggleOpen = () => {
-    if (!isInteractive) {
-      return;
-    }
     setIsOpen(!isOpen);
   };
 
   const itemClasses = [
     styles.experienceItem,
     isOpen ? styles['experienceItem--open'] : '',
-    !isInteractive ? styles['experienceItem--disabled'] : '',
     className,
   ]
     .filter(Boolean)
     .join(' ');
-
-  const canShowDetails = isInteractive && isOpen && (description || achievements);
 
   return (
     <div className={itemClasses}>
@@ -52,9 +43,6 @@ export const ExperienceItem: React.FC<ExperienceItemProps> = ({
         className={styles.experienceItem__header}
         onClick={toggleOpen}
         aria-expanded={isOpen}
-        type="button"
-        disabled={!isInteractive}
-        aria-disabled={!isInteractive}
       >
         <div className={styles.experienceItem__content}>
           <span className={styles.experienceItem__title}>
@@ -66,7 +54,7 @@ export const ExperienceItem: React.FC<ExperienceItemProps> = ({
           {isOpen ? <Minus size={24} /> : <Plus size={24} />}
         </div>
       </button>
-      {canShowDetails && (
+      {isOpen && (description || achievements) && (
         <div className={styles.experienceItem__details}>
           {description && (
             <p className={styles.experienceItem__description}>{description}</p>

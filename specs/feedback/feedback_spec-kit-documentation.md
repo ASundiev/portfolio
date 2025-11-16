@@ -14,6 +14,8 @@ Case Studies:
 * Tablet: `https://www.figma.com/design/cXzgOxJQsnx2jmrplbOJ9d/Orbe---Portfolio-Template--Community-?node-id=5133-9753&t=Dtk2PCnbl6ttQ8Cr-4`
 * Mobile: `https://www.figma.com/design/cXzgOxJQsnx2jmrplbOJ9d/Orbe---Portfolio-Template--Community-?node-id=5133-10231&t=Dtk2PCnbl6ttQ8Cr-4`
 
+**CRITICAL, PAY ATTENTION**: These designs are quite large, so when you use `mcp__figma__get_design_context`, it won't work straight away, you'll need to analyze the design by pieces.
+
 
 ## 1. Hero section
 

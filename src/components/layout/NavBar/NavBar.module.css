@@ -16,12 +16,14 @@
   justify-content: space-between;
   padding: var(--spacing-32) var(--spacing-80);
   width: 100%;
+  gap: var(--spacing-32);
 }
 
 .navBar__social {
   display: flex;
   gap: var(--spacing-12);
-  align-items: flex-start;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .navBar__link {
@@ -32,8 +34,9 @@
 .navBar__menu {
   display: flex;
   gap: var(--spacing-32);
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-end;
+  flex-shrink: 0;
 }
 
 .navBar__menuItem {

@@ -17,6 +17,7 @@
   overflow: hidden;
   border-radius: var(--radius-24);
   margin-bottom: var(--spacing-16);
+  position: relative;
 }
 
 .articleCard__image {

@@ -1,0 +1,23 @@
+/**
+ * Spacing design tokens - 4px base scale
+ */
+
+export const spacing = {
+  4: '4px',
+  8: '8px',
+  12: '12px',
+  16: '16px',
+  24: '24px',
+  32: '32px',
+  40: '40px',
+  48: '48px',
+  56: '56px',
+  72: '72px',
+  80: '80px',
+  88: '88px',
+  104: '104px',
+  136: '136px',
+} as const;
+
+export type Spacing = typeof spacing;
+

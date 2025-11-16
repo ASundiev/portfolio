@@ -14,8 +14,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: var(--spacing-32) 0 var(--spacing-136);
-  min-height: 100vh;
+  padding: 0 0 var(--spacing-136);
   box-sizing: border-box;
 }
 
@@ -256,8 +255,6 @@
   gap: var(--spacing-48);
   align-items: center;
   justify-content: center;
-  max-width: 1440px;
-  margin: 0 auto;
 }
 
 .articles__content {

@@ -52,7 +52,7 @@ colors = {
 - **Button/Large, Medium, Small, XSmall** - Button text sizes
 
 ### Spacing Scale (4px base)
-`4, 8, 12, 16, 24, 32, 40, 48, 56, 72, 80, 88, 104, 136px`
+`4, 8, 12, 16, 24, 32, 40, 48, 56, 72, 80, 88, 104, 136, 160, 240px`
 
 ### Border Radius
 `24, 31, 39, 40, 50, 100px`

@@ -348,8 +348,13 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    padding-top: 70px;
+  }
+
   .hero__container {
     padding: 0 var(--spacing-16);
+    padding-top: var(--spacing-24);
   }
 
   .hero__firstName,

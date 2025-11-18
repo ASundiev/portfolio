@@ -59,3 +59,10 @@
   align-self: flex-start;
 }
 
+/* Responsive */
+@media (max-width: 1024px) {
+  .articleCard__content {
+    padding: var(--spacing-24);
+  }
+}
+

@@ -46,10 +46,12 @@
   justify-content: flex-end;
   padding: var(--spacing-16);
   min-height: 858px;
+  max-height: 600px;
 }
 
 .portfolioCard--style05 .portfolioCard__info {
   width: 100%;
+  padding: var(--spacing-32) var(--spacing-48);
 }
 
 /* Style 06: Stacked (Mobile/Tablet) */

@@ -61,6 +61,10 @@
   .portfolio__grid {
     padding: var(--spacing-56) var(--spacing-24);
   }
+
+  .portfolio__cards {
+    gap: var(--spacing-16);
+  }
 }
 
 @media (max-width: 768px) {

@@ -15,6 +15,7 @@ export interface PortfolioCardProps {
   variant?: 'style05' | 'style06';
   showButton?: boolean;
   className?: string;
+  theme?: 'light' | 'dark';
 }
 
 export const PortfolioCard: React.FC<PortfolioCardProps> = ({
@@ -25,10 +26,12 @@ export const PortfolioCard: React.FC<PortfolioCardProps> = ({
   variant = 'style05',
   showButton = true,
   className = '',
+  theme = 'light',
 }) => {
   const cardClasses = [
     styles.portfolioCard,
     styles[`portfolioCard--${variant}`],
+    theme === 'dark' ? styles['portfolioCard--dark'] : '',
     className,
   ]
     .filter(Boolean)

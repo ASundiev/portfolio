@@ -150,7 +150,6 @@
   }
 
   .portfolioCard--style05 .portfolioCard__info {
-    background: var(--color-black-700);
     padding: var(--spacing-32) var(--spacing-16);
     border-radius: 0;
     flex-direction: column;
@@ -162,24 +161,32 @@
     font-size: 28px;
     line-height: 34px;
     letter-spacing: -0.6px;
-    color: var(--color-white);
   }
 
   .portfolioCard--style05 .portfolioCard__tags {
     justify-content: flex-start;
   }
 
-  .portfolioCard--style05 .portfolioCard__tags > * {
+  .portfolioCard--style05 .portfolioCard__button {
+    display: none;
+  }
+
+  /* Dark theme specific styles for mobile */
+  .portfolioCard--style05.portfolioCard--dark .portfolioCard__info {
+    background: var(--color-black-700);
+  }
+
+  .portfolioCard--style05.portfolioCard--dark .portfolioCard__title {
+    color: var(--color-white);
+  }
+
+  .portfolioCard--style05.portfolioCard--dark .portfolioCard__tags > * {
     border-color: var(--color-white) !important;
     color: var(--color-white) !important;
   }
 
-  .portfolioCard--style05 .portfolioCard__tags > * > * {
+  .portfolioCard--style05.portfolioCard--dark .portfolioCard__tags > * > * {
     color: var(--color-white) !important;
-  }
-
-  .portfolioCard--style05 .portfolioCard__button {
-    display: none;
   }
 }
 

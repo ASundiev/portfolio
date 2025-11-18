@@ -3,7 +3,7 @@ import styles from './Badge.module.css';
 
 export interface BadgeProps {
   children: React.ReactNode;
-  variant?: 'default' | 'dark';
+  variant?: 'default' | 'dark' | 'light';
   className?: string;
 }
 

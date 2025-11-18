@@ -1,10 +1,6 @@
 /* NavBar styles */
 
 .navBar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: transparent;
   border: 0;
   border-bottom: 0;
   border-color: rgba(255, 255, 255, 0);
@@ -80,10 +76,7 @@
 }
 
 /* Dark variant for Portfolio page */
-.navBar--dark,
-.navBar[class*="portfolio"] {
-  background: var(--color-black-700);
-}
+/* Background is now controlled by the page-specific CSS for glassmorphism effect */
 
 .navBar--dark .navBar__menuItem,
 .navBar[class*="portfolio"] .navBar__menuItem {
@@ -95,10 +88,10 @@
   color: var(--color-white);
 }
 
-.navBar--dark .navBar__social .badge,
-.navBar[class*="portfolio"] .navBar__social .badge {
-  border-color: var(--color-white);
-  color: var(--color-white);
+.navBar--dark .navBar__social :global(.badge),
+.navBar[class*="portfolio"] .navBar__social :global(.badge) {
+  border-color: var(--color-white) !important;
+  color: var(--color-white) !important;
 }
 
 .navBar--dark .navBar__mobileMenu,
@@ -122,6 +115,25 @@
 @media (max-width: 768px) {
   .navBar__container {
     padding: var(--spacing-19) var(--spacing-24);
+  }
+
+  .navBar__social {
+    gap: 0;
+  }
+
+  /* Hide LinkedIn badge on mobile, keep Download CV */
+  .navBar__social > *:first-child {
+    display: none;
+  }
+
+  /* Mobile badge styling for Download CV */
+  .navBar__social > * {
+    padding: 4px 14px;
+  }
+
+  .navBar__social > * > * {
+    font-size: 14px;
+    line-height: 22px;
   }
 
   .navBar__menu {

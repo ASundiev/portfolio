@@ -10,13 +10,22 @@
 }
 
 .portfolio__nav {
-  background: var(--color-black-700);
+  background: rgba(40, 40, 40, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
 }
 
 .portfolio__grid {
   background: var(--color-black-700);
   width: 100%;
   padding: var(--spacing-80) var(--spacing-80);
+  padding-top: calc(var(--spacing-80) + 90px); /* Add top padding to account for fixed navbar */
   display: flex;
   gap: var(--spacing-8);
   align-items: flex-start;
@@ -26,7 +35,7 @@
 .portfolio__content {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-51);
+  gap: var(--spacing-48);
   width: 100%;
   max-width: 1280px;
   align-items: center;
@@ -43,7 +52,7 @@
 .portfolio__cards {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-51);
+  gap: var(--spacing-48);
   width: 100%;
 }
 

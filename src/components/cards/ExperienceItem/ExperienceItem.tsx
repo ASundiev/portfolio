@@ -12,6 +12,8 @@ export interface ExperienceItemProps {
   achievements?: string[];
   className?: string;
   defaultOpen?: boolean;
+  hideIcon?: boolean;
+  interactive?: boolean;
 }
 
 export const ExperienceItem: React.FC<ExperienceItemProps> = ({
@@ -22,16 +24,22 @@ export const ExperienceItem: React.FC<ExperienceItemProps> = ({
   achievements,
   className = '',
   defaultOpen = false,
+  hideIcon = false,
+  interactive = true,
 }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   const toggleOpen = () => {
-    setIsOpen(!isOpen);
+    if (interactive) {
+      setIsOpen(!isOpen);
+    }
   };
 
   const itemClasses = [
     styles.experienceItem,
     isOpen ? styles['experienceItem--open'] : '',
+    hideIcon ? styles['experienceItem--hideIcon'] : '',
+    !interactive ? styles['experienceItem--nonInteractive'] : '',
     className,
   ]
     .filter(Boolean)

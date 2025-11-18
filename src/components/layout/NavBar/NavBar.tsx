@@ -28,7 +28,7 @@ export const NavBar: React.FC<NavBarProps> = ({ className = '' }) => {
     <nav className={navClasses}>
       <div className={styles.navBar__container}>
         <div className={styles.navBar__social}>
-          <Badge variant="dark">
+          <Badge variant={className?.includes('portfolio') ? 'light' : 'dark'}>
             <a
               href="https://www.linkedin.com/in/asundiev"
               target="_blank"
@@ -38,7 +38,7 @@ export const NavBar: React.FC<NavBarProps> = ({ className = '' }) => {
               LinkedIn
             </a>
           </Badge>
-          <Badge variant="dark">
+          <Badge variant={className?.includes('portfolio') ? 'light' : 'dark'}>
             <a
               href="https://www.udrop.com/file/O1sr/Andrei-Sundiev_CV.pdf"
               target="_blank"

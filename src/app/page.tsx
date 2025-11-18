@@ -9,6 +9,7 @@ import { ExperienceItem } from '@/components/cards/ExperienceItem';
 import { ArticleCard } from '@/components/cards/ArticleCard';
 import { ExperienceIcon } from '@/components/ui/ExperienceIcon';
 import { imagePaths } from '@/data/images';
+import { withBasePath } from '@/utils/basePath';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -131,7 +132,7 @@ export default function Home() {
             variant="outline"
             size="large"
             showArrow
-            href="/portfolio"
+            href={withBasePath('/portfolio')}
             className={styles.portfolioPreview__button}
           >
             All Case Studies

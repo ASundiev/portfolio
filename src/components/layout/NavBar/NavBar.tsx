@@ -5,6 +5,7 @@ import { List, X } from 'phosphor-react';
 import styles from './NavBar.module.css';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
+import { withBasePath } from '@/utils/basePath';
 
 export interface NavBarProps {
   className?: string;
@@ -52,16 +53,16 @@ export const NavBar: React.FC<NavBarProps> = ({ className = '' }) => {
 
         {/* Desktop Menu */}
         <div className={styles.navBar__menu}>
-          <a href="/" className={styles.navBar__menuItem}>
+          <a href={withBasePath('/')} className={styles.navBar__menuItem}>
             Home
           </a>
-          <a href="/portfolio" className={styles.navBar__menuItem}>
+          <a href={withBasePath('/portfolio')} className={styles.navBar__menuItem}>
             Work
           </a>
-          <a href="/#experience" className={styles.navBar__menuItem}>
+          <a href={withBasePath('/#experience')} className={styles.navBar__menuItem}>
             Experience
           </a>
-          <a href="/#articles" className={styles.navBar__menuItem}>
+          <a href={withBasePath('/#articles')} className={styles.navBar__menuItem}>
             Articles & talks
           </a>
         </div>
@@ -79,16 +80,16 @@ export const NavBar: React.FC<NavBarProps> = ({ className = '' }) => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className={styles.navBar__mobileMenu}>
-          <a href="/" className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
+          <a href={withBasePath('/')} className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
             Home
           </a>
-          <a href="/portfolio" className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
+          <a href={withBasePath('/portfolio')} className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
             Work
           </a>
-          <a href="/#experience" className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
+          <a href={withBasePath('/#experience')} className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
             Experience
           </a>
-          <a href="/#articles" className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
+          <a href={withBasePath('/#articles')} className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
             Articles & talks
           </a>
         </div>

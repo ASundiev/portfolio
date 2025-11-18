@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Footer.module.css';
 import { Badge } from '@/components/ui/Badge';
+import { withBasePath } from '@/utils/basePath';
 
 export interface FooterProps {
   className?: string;
@@ -43,16 +44,16 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
           </div>
         </div>
         <div className={styles.footer__menu}>
-          <a href="/" className={styles.footer__menuItem}>
+          <a href={withBasePath('/')} className={styles.footer__menuItem}>
             Home
           </a>
-          <a href="/portfolio" className={styles.footer__menuItem}>
+          <a href={withBasePath('/portfolio')} className={styles.footer__menuItem}>
             Case studies
           </a>
-          <a href="/#experience" className={styles.footer__menuItem}>
+          <a href={withBasePath('/#experience')} className={styles.footer__menuItem}>
             About
           </a>
-          <a href="/#contact" className={styles.footer__menuItem}>
+          <a href={withBasePath('/#contact')} className={styles.footer__menuItem}>
             Contact
           </a>
         </div>

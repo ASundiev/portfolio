@@ -121,48 +121,61 @@
   flex-shrink: 0;
 }
 
-.portfolioCard__button:hover {
+.portfolioCard__button:hover:not(:disabled) {
   border-color: var(--color-black-700);
   color: var(--color-black-700);
 }
 
-.portfolioCard--style06 .portfolioCard__button {
-  display: none;
+.portfolioCard__button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
+
+/* Buttons visible on both style05 and style06 */
 
 /* Responsive */
 @media (max-width: 1024px) {
   .portfolioCard--style05 {
     min-height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
   }
 
-  .portfolioCard--style05 .portfolioCard__title {
-    font-size: 28px;
-    line-height: 34px;
-    letter-spacing: -0.6px;
-  }
-}
-
-@media (max-width: 768px) {
-  .portfolioCard--style05 {
-    min-height: auto;
-    padding: var(--spacing-16);
+  .portfolioCard--style05 .portfolioCard__imageWrapper {
+    position: relative;
+    height: 350px;
+    border-radius: var(--radius-24);
+    margin-bottom: 0;
   }
 
   .portfolioCard--style05 .portfolioCard__info {
+    background: var(--color-black-700);
     padding: var(--spacing-32) var(--spacing-16);
+    border-radius: 0;
     flex-direction: column;
     align-items: flex-start;
+    gap: var(--spacing-16);
   }
 
   .portfolioCard--style05 .portfolioCard__title {
     font-size: 28px;
     line-height: 34px;
     letter-spacing: -0.6px;
+    color: var(--color-white);
   }
 
   .portfolioCard--style05 .portfolioCard__tags {
     justify-content: flex-start;
+  }
+
+  .portfolioCard--style05 .portfolioCard__tags > * {
+    border-color: var(--color-white) !important;
+    color: var(--color-white) !important;
+  }
+
+  .portfolioCard--style05 .portfolioCard__tags > * > * {
+    color: var(--color-white) !important;
   }
 
   .portfolioCard--style05 .portfolioCard__button {

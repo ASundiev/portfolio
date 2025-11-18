@@ -8,6 +8,7 @@ import { isGifImage } from '@/utils/images';
 
 export interface ArticleCardProps {
   title: string;
+  description?: string;
   imageUrl: string;
   tag: string;
   href?: string;
@@ -16,6 +17,7 @@ export interface ArticleCardProps {
 
 export const ArticleCard: React.FC<ArticleCardProps> = ({
   title,
+  description,
   imageUrl,
   tag,
   href,
@@ -51,6 +53,9 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
       </div>
       <div className={styles.articleCard__content}>
         <h3 className={styles.articleCard__title}>{title}</h3>
+        {description && (
+          <p className={styles.articleCard__description}>{description}</p>
+        )}
         <Badge variant="default" className={styles.articleCard__tag}>
           {tag}
         </Badge>

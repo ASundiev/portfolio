@@ -6,6 +6,20 @@
   align-items: center;
   width: 100%;
   background: var(--color-white);
+  position: relative;
+}
+
+/* NavBar on homepage - brand background with blur effect */
+.homepage__nav {
+  background: rgba(255, 240, 227, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
 }
 
 /* Hero Section */
@@ -14,7 +28,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 0 0 var(--spacing-136);
+  padding: 94px 0 var(--spacing-136);
   box-sizing: border-box;
 }
 
@@ -25,10 +39,7 @@
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-72);
-}
-
-.hero__nav {
-  width: 100%;
+  padding-top: var(--spacing-32);
 }
 
 .hero__content {
@@ -166,15 +177,28 @@
 .portfolioPreview__content {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-51);
+  gap: var(--spacing-48);
   flex: 1;
   align-items: center;
+}
+
+/* Hide section title on homepage (not on portfolio page) */
+.portfolioPreview__header {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 .portfolioPreview__cards {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-51);
+  gap: var(--spacing-48);
   width: 100%;
 }
 

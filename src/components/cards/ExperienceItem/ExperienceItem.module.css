@@ -1,8 +1,19 @@
 /* ExperienceItem styles */
 
 .experienceItem {
-  border-bottom: 1px solid var(--color-black-700);
+  border-bottom: 1px solid #d0d5dd;
   width: 100%;
+}
+
+/* Hide icon variant */
+.experienceItem--hideIcon .experienceItem__icon {
+  display: none;
+}
+
+/* Non-interactive variant */
+.experienceItem--nonInteractive .experienceItem__header {
+  cursor: default;
+  pointer-events: none;
 }
 
 .experienceItem__header {

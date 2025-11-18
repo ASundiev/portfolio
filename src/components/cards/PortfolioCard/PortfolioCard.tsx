@@ -13,6 +13,7 @@ export interface PortfolioCardProps {
   imageUrl: string;
   href?: string;
   variant?: 'style05' | 'style06';
+  showButton?: boolean;
   className?: string;
 }
 
@@ -22,6 +23,7 @@ export const PortfolioCard: React.FC<PortfolioCardProps> = ({
   imageUrl,
   href,
   variant = 'style05',
+  showButton = true,
   className = '',
 }) => {
   const cardClasses = [
@@ -64,11 +66,12 @@ export const PortfolioCard: React.FC<PortfolioCardProps> = ({
             ))}
           </div>
         </div>
-        {href && (
+        {showButton && (
           <button
             className={styles.portfolioCard__button}
             onClick={handleClick}
-            aria-label={`View ${title}`}
+            aria-label={href ? `View ${title}` : title}
+            disabled={!href}
           >
             <ArrowUpRight size={24} weight="bold" />
           </button>

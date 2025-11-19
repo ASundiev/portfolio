@@ -70,6 +70,19 @@
 @media (max-width: 768px) {
   .portfolio__grid {
     padding: var(--spacing-56) var(--spacing-16);
+    padding-top: calc(var(--spacing-56) + 50px); /* Add top padding for navbar */
+  }
+
+  .portfolio__content {
+    gap: var(--spacing-24);
+  }
+
+  .portfolio__cards {
+    gap: var(--spacing-16);
+  }
+
+  .portfolio__cards > *:first-child {
+    margin-top: 0;
   }
 }
 

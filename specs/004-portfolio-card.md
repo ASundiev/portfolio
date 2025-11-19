@@ -85,15 +85,25 @@ interface PortfolioCardProps {
   href?: string;
   variant?: 'style05' | 'style06';
   className?: string;
+  theme?: 'light' | 'dark';  // Added 2025-11-18: Controls light/dark styling on mobile
 }
 ```
+
+**Theme Prop (Added 2025-11-18):**
+The `theme` prop controls the card's appearance on mobile viewports:
+- `'light'` (default): White background with dark text for homepage
+- `'dark'`: Dark background with white text for portfolio page
+
+On desktop, all cards use the overlay style regardless of theme. The theme only affects the mobile/tablet stacked layout.
 
 ### Styling Details
 
 **Dimensions:**
+- Desktop max-height: 600px (added 2025-11-18)
 - Aspect ratio: 16:9 (or as designed in Figma)
-- Border radius: 24px
+- Border radius: 24px (mobile), 31px/40px (desktop info box)
 - Image container: overflow hidden for zoom effect
+- Info box padding: 32px 48px on desktop (updated 2025-11-18)
 
 **Hover Effect:**
 - Image transform: scale(1.05)
@@ -220,12 +230,23 @@ interface PortfolioCardProps {
 
 **Usage Example:**
 ```tsx
+// Homepage - light theme (default)
 <PortfolioCard
   title="Building a high-performing Product & Marketing design org"
   tags={['2025', 'Head of Design / Design Director']}
   imageUrl="/images/portfolio-1.jpg"
   href="https://pitch.com/v/example"
   variant="style05"
+/>
+
+// Portfolio page - dark theme
+<PortfolioCard
+  title="Building a high-performing Product & Marketing design org"
+  tags={['2025', 'Head of Design / Design Director']}
+  imageUrl="/images/portfolio-1.jpg"
+  href="https://pitch.com/v/example"
+  variant="style05"
+  theme="dark"
 />
 ```
 

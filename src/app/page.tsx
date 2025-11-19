@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { NavBar } from '@/components/layout/NavBar';
 import { Footer } from '@/components/layout/Footer';
@@ -7,12 +9,19 @@ import { SectionHeader } from '@/components/ui/SectionHeader';
 import { PortfolioCard } from '@/components/cards/PortfolioCard';
 import { ExperienceItem } from '@/components/cards/ExperienceItem';
 import { ArticleCard } from '@/components/cards/ArticleCard';
+import { WhyMeItem } from '@/components/cards/WhyMeItem';
 import { ExperienceIcon } from '@/components/ui/ExperienceIcon';
 import { imagePaths } from '@/data/images';
 import { withBasePath } from '@/utils/basePath';
 import styles from './page.module.css';
 
 export default function Home() {
+  const [openWhyMeIndex, setOpenWhyMeIndex] = useState<number | null>(null);
+
+  const handleWhyMeToggle = (index: number) => {
+    setOpenWhyMeIndex(openWhyMeIndex === index ? null : index);
+  };
+
   return (
     <div className={styles.homepage}>
       {/* Navigation - Outside hero for sticky behavior */}
@@ -77,21 +86,34 @@ export default function Home() {
             className={styles.whyMe__header}
           />
           <div className={styles.whyMe__list}>
-            <div className={styles.whyMe__item}>
-              Spearheading the AI-first transformation in Product & Design org
-            </div>
-            <div className={styles.whyMe__item}>
-              Player-coach with a diverse skillset
-            </div>
-            <div className={styles.whyMe__item}>
-              Nurturing high-performance design teams for real impact
-            </div>
-            <div className={styles.whyMe__item}>
-              Strategic thinker, focused on tangible outcomes
-            </div>
-            <div className={styles.whyMe__item}>
-              Experienced in scaling high-impact products
-            </div>
+            <WhyMeItem
+              title="Spearheading the AI-first transformation in Product & Design org"
+              description="Integrated GenAI prototyping into the Product & Design workflows with 100% adoption. Built proof-of-concept prototypes to enable early customer validation for Sales. Initiated the work on the AI-first design system."
+              caseStudyUrl="https://pitch.com/v/spearheading-the-ai-first-design-transformation-gsqedn"
+              isOpen={openWhyMeIndex === 0}
+              onToggle={() => handleWhyMeToggle(0)}
+            />
+            <WhyMeItem
+              title="Player-coach with a diverse skillset"
+              description="Drove the adoption of the structured discovery process and simplified the handover process with consistent templates for design files in Figma."
+              caseStudyUrl="https://pitch.com/v/designer-enablement-dc69ey"
+              isOpen={openWhyMeIndex === 1}
+              onToggle={() => handleWhyMeToggle(1)}
+            />
+            <WhyMeItem
+              title="Nurturing high-performance design teams for real impact"
+              description="Rebuilt Marketing Design as a lean, high-impact function, boosting teams' customer satisfaction by +16% YoY (CSAT: 92%) and eNPS by +8% (eNPS: 92). Contributed to 6x increase in deal close rate and 2x increase in deal size by enabling Sales with templates and automations."
+              caseStudyUrl="https://pitch.com/v/marketing-design-mwtw93"
+              isOpen={openWhyMeIndex === 2}
+              onToggle={() => handleWhyMeToggle(2)}
+            />
+            <WhyMeItem
+              title="Strategic thinker, focused on tangible outcomes"
+              description="Saved more than 33,845 engineering hours (~£5m in savings) to the business over 1.5 years by leading the implementation of a company-wide design system."
+              caseStudyUrl="https://pitch.com/v/design-system-k92yxp"
+              isOpen={openWhyMeIndex === 3}
+              onToggle={() => handleWhyMeToggle(3)}
+            />
           </div>
         </div>
       </section>

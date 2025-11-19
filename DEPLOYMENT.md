@@ -58,6 +58,29 @@ npx serve out
 - **next.config.js**: Next.js configuration with static export settings
 - **.github/workflows/deploy.yml**: GitHub Actions workflow for automatic deployment
 - **public/.nojekyll**: Prevents GitHub Pages from processing files with Jekyll
+- **src/app/layout.tsx**: Metadata configuration including Open Graph tags and favicon (added 2025-11-18)
+
+## SEO & Social Sharing (Added 2025-11-18)
+
+The site includes comprehensive metadata for SEO and social sharing:
+
+### Favicon
+- **Location**: `public/images/favicon.png`
+- **Usage**: Displayed in browser tabs, bookmarks, and mobile home screens
+- **Configuration**: Set in `layout.tsx` metadata
+
+### Open Graph Images
+- **Location**: `public/images/og-img.jpg`
+- **Dimensions**: 1200×630px (recommended by Facebook/LinkedIn)
+- **Usage**: Displayed when sharing links on social media platforms
+- **Configuration**: Includes Open Graph and Twitter Card metadata in `layout.tsx`
+
+### Metadata Includes:
+- Site title and description
+- Open Graph tags for social sharing
+- Twitter Card tags
+- Favicon and apple-touch-icon
+- Locale and site URL configuration
 
 ## Troubleshooting
 

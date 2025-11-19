@@ -99,6 +99,8 @@ interface ArticleCardProps {
 - Image to content: 24px padding
 - Badge to title: 12px gap
 - Title padding: 24px horizontal
+- Desktop content padding: 48px (all sides)
+- Mobile/tablet content padding: 24px (all sides) - updated 2025-11-18
 
 **Hover Effect:**
 - Image: transform: scale(1.05)

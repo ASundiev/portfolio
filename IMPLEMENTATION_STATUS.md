@@ -1,6 +1,6 @@
 # Portfolio Website - Implementation Status
 
-**Last Updated:** 2025-11-16
+**Last Updated:** 2025-11-18
 **Approach:** GitHub spec-kit methodology
 **Status:** ✅ All features implemented and production-ready
 
@@ -349,6 +349,15 @@ portfolio/
 
 ## Recent Fixes
 
+### 2025-11-18
+- **Mobile navbar overlap fix**: Added padding-top to hero section to prevent navbar from covering hero content on mobile
+- **Favicon and Open Graph metadata**: Added favicon and OG image assets, configured metadata in layout.tsx for social sharing
+- **Portfolio card theme variants**: Added `theme` prop to PortfolioCard component for light/dark styling on mobile viewports
+- **Section max-width constraints**: Added max-width: 1280px to portfolio preview, case studies, and articles sections for better content hierarchy on large screens
+- **Desktop card dimensions**: Updated portfolio cards with max-height: 600px and info padding: 32px 48px
+- **Mobile spacing optimization**: Reduced portfolio card gaps from 48px to 16px on mobile/tablet for tighter layouts
+- **Article card responsive padding**: Updated article card content padding from 48px to 24px on mobile/tablet viewports
+
 ### 2025-11-16
 - Fixed Button component TypeScript types to support both button and anchor props
 - Removed unused import (`typography`) from Button component
@@ -360,7 +369,8 @@ portfolio/
 While the project is production-ready, these optional enhancements could be considered:
 
 1. **SEO Enhancement**
-   - Add Open Graph meta tags
+   - ✅ Open Graph meta tags (completed 2025-11-18)
+   - ✅ Favicon (completed 2025-11-18)
    - Add structured data (JSON-LD)
    - Create sitemap.xml
 

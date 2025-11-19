@@ -35,7 +35,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-16);
-  padding: var(--spacing-48);
+  padding: var(--spacing-24);
 }
 
 .articleCard__title {
@@ -59,10 +59,20 @@
   align-self: flex-start;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
+/* Mobile styles */
+@media (max-width: 768px) {
   .articleCard__content {
-    padding: var(--spacing-24);
+    padding: var(--spacing-12) 0;
+  }
+
+  .articleCard__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .articleCard__description {
+    font-size: 16px;
+    line-height: 28px;
   }
 }
 

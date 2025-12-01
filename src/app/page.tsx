@@ -151,7 +151,7 @@ export default function Home() {
             <PortfolioCard
               title="Facilitating consistent design process and smooth handover"
               tags={['2023', 'Design Manager']}
-              imageUrl={imagePaths.portfolio['3']}
+              imageUrl={imagePaths.portfolio['5']}
               href="https://pitch.com/v/designer-enablement-dc69ey"
               variant="style05"
             />

@@ -45,9 +45,15 @@
   flex-direction: column;
   justify-content: flex-end;
   padding: var(--spacing-16);
-  min-height: auto;
-  max-height: 640px;
-  height: 640px;
+}
+
+/* Desktop only - fixed height */
+@media (min-width: 1025px) {
+  .portfolioCard--style05 {
+    min-height: auto;
+    max-height: 640px;
+    height: 640px;
+  }
 }
 
 .portfolioCard--style05 .portfolioCard__info {
@@ -193,3 +199,14 @@
   }
 }
 
+/* Mobile specific styles */
+@media (max-width: 768px) {
+  .portfolioCard--style05 .portfolioCard__imageWrapper {
+    height: 280px;
+  }
+
+  .portfolioCard--style05 .portfolioCard__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}

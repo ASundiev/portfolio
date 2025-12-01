@@ -96,9 +96,9 @@
   }
 
   .footer__email {
-    font-size: 42px;
-    line-height: 46px;
-    letter-spacing: -2px;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -1px;
   }
 }
 

@@ -1,8 +1,78 @@
 /* WhyMeItem styles */
 
 .whyMeItem {
-  border-bottom: 1px solid var(--color-black-700);
   width: 100%;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  background: transparent;
+  position: relative;
+  /* Ensure shadow is not clipped */
+  overflow: visible;
+  z-index: 1;
+}
+
+/* Collapsed state padding */
+.whyMeItem:not(.whyMeItem--open) {
+  padding: 0 var(--spacing-40);
+}
+
+/* Content wrapper handles border and inner layout */
+.whyMeItem__content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 1px solid var(--color-black-700);
+  padding: var(--spacing-16) 0;
+  transition: border-color 0.2s ease;
+}
+
+/* Expanded state */
+.whyMeItem--open {
+  background: #FEB579;
+  box-shadow: 
+    0px 320px 90px 0px rgba(111, 62, 21, 0.00), 
+    0px 205px 82px 0px rgba(111, 62, 21, 0.01), 
+    0px 115px 69px 0px rgba(111, 62, 21, 0.03), 
+    0px 51px 51px 0px rgba(111, 62, 21, 0.04), 
+    0px 13px 28px 0px rgba(111, 62, 21, 0.05);
+  border-radius: var(--radius-24);
+  padding: var(--spacing-24);
+  margin: var(--spacing-16) 0;
+  border: none;
+  z-index: 10; /* Raise above other items for shadow */
+}
+
+/* Expanded state resets */
+.whyMeItem--open .whyMeItem__content {
+  border-bottom: none;
+  padding: 0;
+  gap: var(--spacing-16); /* Gap between title and description */
+}
+
+/* Hover state for collapsed item */
+.whyMeItem:not(.whyMeItem--open)::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #FEB579;
+  border-radius: 12px;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: -1; /* Behind content */
+  pointer-events: none;
+}
+
+.whyMeItem:not(.whyMeItem--open):hover::before {
+  clip-path: inset(0 0 0 0);
+}
+
+/* Hide border on hover for collapsed item */
+.whyMeItem:not(.whyMeItem--open):hover .whyMeItem__content {
+  border-bottom-color: transparent;
+}
+
+/* Hide border of the PREVIOUS item when hovering the NEXT item */
+.whyMeItem:has(+ .whyMeItem:hover:not(.whyMeItem--open)) .whyMeItem__content {
+  border-bottom-color: transparent;
 }
 
 .whyMeItem__header {
@@ -10,22 +80,19 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-16);
-  padding: var(--spacing-16) 0;
   width: 100%;
   background: none;
   border: none;
   cursor: pointer;
   text-align: left;
-  transition: opacity 0.2s ease;
-}
-
-.whyMeItem__header:hover {
-  opacity: 0.8;
+  padding: 0;
+  margin: 0;
 }
 
 .whyMeItem__title {
-  font-size: 20px;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
+  font-size: 20px;
   line-height: 28px;
   color: var(--color-black-700);
   flex: 1;
@@ -39,30 +106,36 @@
   justify-content: center;
   color: var(--color-black-700);
   flex-shrink: 0;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.whyMeItem__details {
+.whyMeItem__icon--open {
+  transform: rotate(45deg);
+}
+
+/* Animation Wrapper */
+.whyMeItem__detailsWrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.whyMeItem__detailsWrapper--open {
+  grid-template-rows: 1fr;
+}
+
+.whyMeItem__detailsInner {
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-32);
-  padding-bottom: var(--spacing-16);
-  animation: slideDown 0.3s ease;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  gap: var(--spacing-32); /* Gap between description and button */
+  /* Add minimal padding to avoid scrollbar or clipping issues if needed */
 }
 
 .whyMeItem__description {
-  font-size: 16px;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
+  font-size: 16px;
   line-height: 26px;
   color: var(--color-black-900);
   margin: 0;
@@ -76,8 +149,16 @@
 
 /* Mobile styles */
 @media (max-width: 768px) {
+  .whyMeItem:not(.whyMeItem--open) {
+    padding: 0 var(--spacing-24);
+  }
+
+  .whyMeItem--open {
+    padding: var(--spacing-16) var(--spacing-24);
+  }
+
   .whyMeItem__title {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 26px;
   }
 

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Plus, Minus } from 'phosphor-react';
+import { Plus } from 'phosphor-react';
 import { Button } from '@/components/ui/Button';
 import styles from './WhyMeItem.module.css';
 
@@ -33,32 +33,37 @@ export const WhyMeItem: React.FC<WhyMeItemProps> = ({
 
   return (
     <div className={itemClasses}>
-      <button
-        className={styles.whyMeItem__header}
-        onClick={onToggle}
-        aria-expanded={isOpen}
-      >
-        <span className={styles.whyMeItem__title}>{title}</span>
-        <div className={styles.whyMeItem__icon}>
-          {isOpen ? <Minus size={24} weight="bold" /> : <Plus size={24} weight="bold" />}
+      <div className={styles.whyMeItem__content}>
+        <button
+          className={styles.whyMeItem__header}
+          onClick={onToggle}
+          aria-expanded={isOpen}
+        >
+          <span className={styles.whyMeItem__title}>{title}</span>
+          <span className={`${styles.whyMeItem__icon} ${isOpen ? styles['whyMeItem__icon--open'] : ''}`}>
+            <Plus size={24} weight="bold" />
+          </span>
+        </button>
+        <div 
+          className={`${styles.whyMeItem__detailsWrapper} ${isOpen ? styles['whyMeItem__detailsWrapper--open'] : ''}`}
+          aria-hidden={!isOpen}
+        >
+          <div className={styles.whyMeItem__detailsInner}>
+            <p className={styles.whyMeItem__description}>{description}</p>
+            <Button
+              variant="filled"
+              size="xSmall"
+              showArrow
+              href={caseStudyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.whyMeItem__button}
+            >
+              View the case study
+            </Button>
+          </div>
         </div>
-      </button>
-      {isOpen && (
-        <div className={styles.whyMeItem__details}>
-          <p className={styles.whyMeItem__description}>{description}</p>
-          <Button
-            variant="filled"
-            size="xSmall"
-            showArrow
-            href={caseStudyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.whyMeItem__button}
-          >
-            View the case study
-          </Button>
-        </div>
-      )}
+      </div>
     </div>
   );
 };

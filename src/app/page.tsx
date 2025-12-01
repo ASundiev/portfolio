@@ -11,12 +11,14 @@ import { ExperienceItem } from '@/components/cards/ExperienceItem';
 import { ArticleCard } from '@/components/cards/ArticleCard';
 import { WhyMeItem } from '@/components/cards/WhyMeItem';
 import { ExperienceIcon } from '@/components/ui/ExperienceIcon';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { imagePaths } from '@/data/images';
 import { withBasePath } from '@/utils/basePath';
 import styles from './page.module.css';
 
 export default function Home() {
-  const [openWhyMeIndex, setOpenWhyMeIndex] = useState<number | null>(null);
+  const [openWhyMeIndex, setOpenWhyMeIndex] = useState<number | null>(0);
+  const [whyMeRef, isWhyMeVisible] = useIntersectionObserver({ threshold: 0.2 });
 
   const handleWhyMeToggle = (index: number) => {
     setOpenWhyMeIndex(openWhyMeIndex === index ? null : index);
@@ -77,7 +79,11 @@ export default function Home() {
       </section>
 
       {/* Why Me Section */}
-      <section className={styles.whyMe} id="why-me">
+      <section 
+        className={`${styles.whyMe} ${isWhyMeVisible ? styles.inView : ''}`} 
+        id="why-me"
+        ref={whyMeRef as React.RefObject<HTMLElement>}
+      >
         <div className={styles.whyMe__content}>
           <SectionHeader
             title="Why me"
@@ -122,7 +128,7 @@ export default function Home() {
       <section className={styles.portfolioPreview} id="portfolio">
         <div className={styles.portfolioPreview__content}>
           <SectionHeader
-            title="Case studies"
+            title="Work"
             alignment="center"
             size="big"
             className={styles.portfolioPreview__header}
@@ -167,7 +173,6 @@ export default function Home() {
         <div className={styles.experience__content}>
           <div className={styles.experience__grid}>
             <div className={styles.experience__title}>
-              <ExperienceIcon className={styles.experience__icon} />
               <span className={styles.experience__label}>E X P E R I E N C E</span>
             </div>
             <div className={styles.experience__list}>
@@ -255,21 +260,21 @@ export default function Home() {
             <ArticleCard
               title="Design direction as a step before design system"
               description="Long-lasting design systems need solid foundations. Sometimes this requires taking a step back."
-              imageUrl={imagePaths.articles['4']}
+              imageUrl={imagePaths.articles['5']}
               tag="Article"
               href="https://medium.com/hacking-talent/design-direction-as-a-step-before-design-system-89218ba79659"
             />
             <ArticleCard
               title="Tool tips: How our design team switched to Figma"
               description="It's increasingly clear that the tools we use shape the work we do in all sorts of ways, so picking the right tool for your task is absolutely critical."
-              imageUrl={imagePaths.articles['5']}
+              imageUrl={imagePaths.articles['6']}
               tag="Article"
               href="https://www.intercom.com/blog/design-team-switching-to-figma/"
             />
             <ArticleCard
               title="Working as a designer in a foreign language"
               description="The design industry speaks English. The articles we read, the tools we use, the conferences we attend: we all speak the same language when it comes to design."
-              imageUrl={imagePaths.articles['6']}
+              imageUrl={imagePaths.articles['7']}
               tag="Article"
             />
           </div>

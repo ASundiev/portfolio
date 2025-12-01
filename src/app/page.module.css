@@ -432,6 +432,7 @@
   .experience__title {
     position: static;
     transform: none;
+    writing-mode: horizontal-tb;
     width: 100%;
     margin-bottom: var(--spacing-24);
   }

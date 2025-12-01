@@ -7,6 +7,7 @@ export const colors = {
     900: '#000000',
     700: '#282828',
     500: '#4B4B4B',
+    300: '#BDBDBD',
   },
   white: '#FFFFFF',
   orange: {
@@ -17,4 +18,3 @@ export const colors = {
 } as const;
 
 export type Colors = typeof colors;
-

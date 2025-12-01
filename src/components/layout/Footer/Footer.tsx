@@ -48,7 +48,7 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
             Home
           </a>
           <a href={withBasePath('/portfolio')} className={styles.footer__menuItem}>
-            Case studies
+            Work
           </a>
           <a href={withBasePath('/#experience')} className={styles.footer__menuItem}>
             About

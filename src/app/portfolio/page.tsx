@@ -13,7 +13,7 @@ export default function Portfolio() {
       <section className={styles.portfolio__grid}>
         <div className={styles.portfolio__content}>
           <SectionHeader
-            title="Case studies"
+            title="Work"
             alignment="center"
             size="big"
             className={`${styles.portfolio__header} sectionHeader--dark`}

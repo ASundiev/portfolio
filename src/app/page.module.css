@@ -432,6 +432,8 @@
   .experience__title {
     position: static;
     transform: none;
+    writing-mode: horizontal-tb;
+    justify-content: flex-start;
     width: 100%;
     margin-bottom: var(--spacing-24);
   }

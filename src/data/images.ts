@@ -12,7 +12,7 @@ export const imagePaths = {
   profile: withBasePath('/images/profile.jpg'),
 
   portfolio: {
-    '1': withBasePath('/images/portfolio-1.jpg'),
+    '1': withBasePath('/images/portfolio-1.mp4'),
     '2': withBasePath('/images/portfolio-2.gif'),
     '3': withBasePath('/images/portfolio-3.png'),
     '4': withBasePath('/images/portfolio-4.png'),

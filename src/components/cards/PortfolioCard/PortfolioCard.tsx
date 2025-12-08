@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { ArrowUpRight } from 'phosphor-react';
 import styles from './PortfolioCard.module.css';
 import { Badge } from '@/components/ui/Badge';
-import { isGifImage } from '@/utils/images';
+import { isGifImage, isVideoImage } from '@/utils/images';
 
 export interface PortfolioCardProps {
   title: string;
@@ -44,19 +44,32 @@ export const PortfolioCard: React.FC<PortfolioCardProps> = ({
   };
 
   const isGif = isGifImage(imageUrl);
+  const isVideo = isVideoImage(imageUrl);
 
   return (
     <div className={cardClasses}>
       <div className={styles.portfolioCard__imageWrapper} onClick={handleClick}>
-        <Image
-          src={imageUrl}
-          alt={title}
-          fill
-          className={styles.portfolioCard__image}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          style={{ objectFit: 'cover', objectPosition: 'center' }}
-          unoptimized={isGif}
-        />
+        {isVideo ? (
+          <video
+            src={imageUrl}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className={styles.portfolioCard__image}
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+          />
+        ) : (
+          <Image
+            src={imageUrl}
+            alt={title}
+            fill
+            className={styles.portfolioCard__image}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+            unoptimized={isGif}
+          />
+        )}
       </div>
       <div className={styles.portfolioCard__info}>
         <div className={styles.portfolioCard__content}>

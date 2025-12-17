@@ -149,10 +149,10 @@ export default function Home() {
               variant="style05"
             />
             <PortfolioCard
-              title="Facilitating consistent design process and smooth handover"
-              tags={['2023', 'Design Manager']}
-              imageUrl={imagePaths.portfolio['5']}
-              href="https://pitch.com/v/designer-enablement-dc69ey"
+              title="Increasing the user engagement and gaining high adoption with Custom Reporting at Intercom"
+              tags={['2020', 'Product Designer']}
+              imageUrl={imagePaths.portfolio['6']}
+              href="https://pitch.com/v/custom-reporting-4qmvuw"
               variant="style05"
             />
           </div>

@@ -20,7 +20,7 @@ export default function Projects() {
                     />
                     <div className={styles.projects__cards}>
                         <PortfolioCard
-                            title="NeuralStream | AI-powered hyper-personalised cinematic recommendation tool"
+                            title="NeuralStream | AI-powered cinematic recommendation tool"
                             tags={['2025', 'Creator']}
                             imageUrl={imagePaths.projects['1']}
                             href="https://neuralstream.mov/"
@@ -28,7 +28,7 @@ export default function Projects() {
                             theme="light"
                         />
                         <PortfolioCard
-                            title="Lespal | Track your music education with AI-powered insights"
+                            title="Lespal | Music lessons tracker with AI-powered insights"
                             tags={['2025', 'Creator']}
                             imageUrl={imagePaths.projects['2']}
                             href="https://lespal.app/"
@@ -36,7 +36,7 @@ export default function Projects() {
                             theme="light"
                         />
                         <PortfolioCard
-                            title="Diving in design systems | The first online course on design systems in Russia"
+                            title="The first online course on design systems in Russia"
                             tags={['2021', 'Author']}
                             imageUrl={imagePaths.portfolio['7']}
                             href="https://contented.ru/edu/design-systems"

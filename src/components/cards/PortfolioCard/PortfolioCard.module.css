@@ -160,6 +160,7 @@
 
   .portfolioCard--style05 .portfolioCard__info {
     padding: var(--spacing-32) var(--spacing-16);
+    background: transparent;
     border-radius: 0;
     flex-direction: column;
     align-items: flex-start;
@@ -189,12 +190,12 @@
     color: var(--color-white);
   }
 
-  .portfolioCard--style05.portfolioCard--dark .portfolioCard__tags > * {
+  .portfolioCard--style05.portfolioCard--dark .portfolioCard__tags>* {
     border-color: var(--color-white) !important;
     color: var(--color-white) !important;
   }
 
-  .portfolioCard--style05.portfolioCard--dark .portfolioCard__tags > * > * {
+  .portfolioCard--style05.portfolioCard--dark .portfolioCard__tags>*>* {
     color: var(--color-white) !important;
   }
 }

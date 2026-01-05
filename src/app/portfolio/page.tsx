@@ -67,14 +67,6 @@ export default function Portfolio() {
               variant="style05"
               theme="dark"
             />
-            <PortfolioCard
-              title="Launching the first online course on design systems in Russia"
-              tags={['2021', 'Author']}
-              imageUrl={imagePaths.portfolio['7']}
-              href="https://contented.ru/edu/design-systems"
-              variant="style05"
-              theme="dark"
-            />
           </div>
         </div>
       </section>

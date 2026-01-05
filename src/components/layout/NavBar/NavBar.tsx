@@ -59,6 +59,9 @@ export const NavBar: React.FC<NavBarProps> = ({ className = '' }) => {
           <a href={withBasePath('/portfolio')} className={styles.navBar__menuItem}>
             Work
           </a>
+          <a href={withBasePath('/projects')} className={styles.navBar__menuItem}>
+            Projects
+          </a>
           <a href={withBasePath('/#experience')} className={styles.navBar__menuItem}>
             Experience
           </a>
@@ -85,6 +88,9 @@ export const NavBar: React.FC<NavBarProps> = ({ className = '' }) => {
           </a>
           <a href={withBasePath('/portfolio')} className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
             Work
+          </a>
+          <a href={withBasePath('/projects')} className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
+            Projects
           </a>
           <a href={withBasePath('/#experience')} className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
             Experience

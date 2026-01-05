@@ -21,6 +21,11 @@ export const imagePaths = {
     '7': withBasePath('/images/portfolio-7.gif'),
   },
 
+  projects: {
+    '1': withBasePath('/images/projects-1.mp4'),
+    '2': withBasePath('/images/projects-2.mp4'),
+  },
+
   articles: {
     '1': withBasePath('/images/article-1.jpg'),
     '2': withBasePath('/images/article-2.jpg'),

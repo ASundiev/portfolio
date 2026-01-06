@@ -68,7 +68,7 @@ export default function Home() {
               variant="outline"
               size="xSmall"
               showArrow
-              href="https://www.udrop.com/file/O1sr/Andrei-Sundiev_CV.pdf"
+              href="https://www.udrop.com/file/O89p/Andrei-Sundiev_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -79,8 +79,8 @@ export default function Home() {
       </section>
 
       {/* Why Me Section */}
-      <section 
-        className={`${styles.whyMe} ${isWhyMeVisible ? styles.inView : ''}`} 
+      <section
+        className={`${styles.whyMe} ${isWhyMeVisible ? styles.inView : ''}`}
         id="why-me"
         ref={whyMeRef as React.RefObject<HTMLElement>}
       >
@@ -218,7 +218,7 @@ export default function Home() {
           <Button
             variant="filled"
             size="xSmall"
-            href="https://www.udrop.com/file/O1sr/Andrei-Sundiev_CV.pdf"
+            href="https://www.udrop.com/file/O89p/Andrei-Sundiev_CV.pdf"
             className={styles.experience__button}
           >
             Download full CV

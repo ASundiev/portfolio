@@ -33,7 +33,7 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
             </Badge>
             <Badge variant="dark">
               <a
-                href="https://www.udrop.com/file/O1sr/Andrei-Sundiev_CV.pdf"
+                href="https://www.udrop.com/file/O89p/Andrei-Sundiev_CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.footer__link}

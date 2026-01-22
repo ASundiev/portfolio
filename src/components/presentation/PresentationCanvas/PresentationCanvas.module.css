@@ -1,0 +1,107 @@
+/**
+ * Presentation Canvas styles
+ */
+
+.canvas {
+    position: fixed;
+    inset: 0;
+    background: var(--canvas-bg);
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    gap: 120px;
+    transform-origin: 0 0;
+    will-change: transform;
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Disable transition during drag for immediate feedback */
+.canvas:active .content {
+    transition: none;
+}
+
+/* Slide indicator */
+.indicator {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(12px);
+    border-radius: 100px;
+    font-family: var(--slide-font-display);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--slide-text-primary);
+    z-index: 100;
+}
+
+.indicatorCurrent {
+    color: var(--slide-text-primary);
+}
+
+.indicatorSeparator {
+    color: var(--slide-text-muted);
+}
+
+.indicatorTotal {
+    color: var(--slide-text-muted);
+}
+
+/* Controls hint */
+.hint {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    font-family: var(--slide-font-display);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--slide-text-muted);
+    z-index: 100;
+}
+
+.hint kbd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    padding: 0 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--slide-text-secondary);
+}
+
+.hintSeparator {
+    margin: 0 4px;
+    opacity: 0.5;
+}
+
+/* Hide hint on mobile */
+@media (max-width: 768px) {
+    .hint {
+        display: none;
+    }
+}

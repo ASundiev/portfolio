@@ -2,7 +2,7 @@
  * Global styles with design token integration
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700&family=Caveat:wght@400;500&display=swap');
 
 :root {
   /* Color tokens */
@@ -41,6 +41,43 @@
   --radius-40: 40px;
   --radius-50: 50px;
   --radius-100: 100px;
+
+  /* ========== PRESENTATION TOKENS ========== */
+  /* Slide dimensions */
+  --slide-width: 1920px;
+  --slide-height: 1080px;
+  --slide-aspect: calc(16 / 9);
+  --slide-padding: 120px;
+
+  /* Slide colors */
+  --slide-bg: #111111;
+  --slide-bg-navy: #150E3F;
+  --slide-text-primary: #FFFFFF;
+  --slide-text-secondary: rgba(255, 255, 255, 0.8);
+  --slide-text-muted: rgba(255, 255, 255, 0.48);
+  --slide-accent-purple: #9C94FF;
+  --slide-accent-purple-soft: #cfccff;
+  --slide-accent-teal: #6CABAD;
+  --slide-beamery-red: #F15852;
+  --slide-card-bg: rgba(255, 255, 255, 0.04);
+  --slide-card-border: rgba(255, 255, 255, 0.08);
+
+  /* Slide typography */
+  --slide-font-display: 'Inter Tight', sans-serif;
+  --slide-font-handwritten: 'Caveat', cursive;
+  --slide-text-cover: 88px;
+  --slide-text-page: 64px;
+  --slide-text-page-small: 34px;
+  --slide-text-body: 28px;
+  --slide-text-body-small: 26px;
+
+  /* Canvas */
+  --canvas-bg: #0a0a0a;
+  --canvas-margin: 80px;
+
+  /* Gradient tokens */
+  --slide-glow-gradient: radial-gradient(44.94% 100.4% at 50% 50%, #6D60FF 0%, #4232F9 35.5%, #271E93 100%);
+  --slide-heading-gradient: linear-gradient(90deg, #CACACA 0%, #FFFFFF 84.75%);
 }
 
 * {
@@ -89,3 +126,14 @@ ul {
   list-style: none;
 }
 
+.bold-white {
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.gradient {
+  background: linear-gradient(90deg, #FFFFFF 0%, var(--slide-accent-purple-soft) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

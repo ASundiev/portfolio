@@ -1,0 +1,89 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    height: 100%;
+}
+
+.heading {
+    font-size: var(--slide-text-page);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--slide-accent-purple-soft);
+}
+
+/* Support for gradient text in heading (matching HeroWithContentSlide) */
+.heading :global(.gradient) {
+    background: var(--slide-heading-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.contentWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.subHeading {
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--brand-white);
+    margin-bottom: 24px;
+}
+
+.columns {
+    display: flex;
+    gap: 80px;
+    width: 100%;
+}
+
+.column {
+    flex: 1;
+}
+
+.bulletList {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.bulletItem {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--slide-text-secondary);
+    position: relative;
+    padding-left: 32px;
+}
+
+.bulletItem::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--slide-text-secondary);
+}
+
+.illustrationArea {
+    flex: 1;
+    position: relative;
+    margin-top: 40px;
+}
+
+.glow {
+    position: absolute;
+    top: calc(50% + 10px);
+    right: -200px;
+    width: 900px;
+    height: 555px;
+    background: var(--slide-glow-gradient);
+    filter: blur(395px);
+    opacity: 0.48;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: -1;
+}

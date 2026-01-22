@@ -1,0 +1,40 @@
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background: radial-gradient(77.99% 112.59% at 26.49% 4.02%, rgba(255, 255, 255, 0.02) 0%, rgba(217, 217, 217, 0) 100%), rgba(18, 18, 18, 0.10);
+    border-radius: 24px;
+    backdrop-filter: blur(24px);
+    text-align: center;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border: 2px solid transparent;
+    border-radius: 24px;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.12) 0%,
+            rgba(255, 255, 255, 0.09) 35%,
+            rgba(255, 255, 255, 0.06) 70%,
+            rgba(255, 255, 255, 0.07) 100%) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+}
+
+/* Metric card variant - used for stats display */
+.metricCard {
+    padding: 32px;
+    gap: 8px;
+    border-radius: 48px;
+}
+
+.metricCard::after {
+    border-radius: 48px;
+}

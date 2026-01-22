@@ -1,0 +1,120 @@
+/**
+ * Two Column Slide styles
+ */
+
+.glow {
+    position: absolute;
+    top: calc(50% + 10px);
+    right: -200px;
+    width: 900px;
+    height: 555px;
+    background: var(--slide-glow-gradient);
+    filter: blur(395px);
+    opacity: 0.48;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 120px;
+    height: 100%;
+    align-items: flex-start;
+    /* Respect padding-top */
+}
+
+.alignCenter .illustrationColumn {
+    align-items: center;
+}
+
+.reverse .textColumn {
+    order: 2;
+}
+
+.reverse .illustrationColumn {
+    order: 1;
+}
+
+.textColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.heading {
+    font-family: var(--slide-font-display);
+    font-size: var(--slide-text-page);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--slide-accent-purple-soft);
+}
+
+.heading :global(.gradient) {
+    background: var(--slide-heading-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subHeading {
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--color-white);
+}
+
+.contentGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.extraContent {
+    margin-top: 12px;
+}
+
+.bullet {
+    position: relative;
+    font-family: var(--slide-font-display);
+    font-size: var(--slide-text-body);
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--slide-text-secondary);
+    letter-spacing: 0.02em;
+}
+
+.bullet::before {
+    content: "•";
+    position: absolute;
+    right: calc(100% + 12px);
+    /* Hang dot 12px to the left of the text */
+    color: var(--slide-text-muted);
+}
+
+.illustrationColumn {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.reverse .illustrationColumn {
+    justify-content: flex-start;
+}

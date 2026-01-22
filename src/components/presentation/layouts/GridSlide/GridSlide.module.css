@@ -1,0 +1,64 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    height: 100%;
+}
+
+.heading {
+    font-size: var(--slide-text-page);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--slide-text-primary);
+}
+
+.grid {
+    display: grid;
+    width: 100%;
+}
+
+.gridItem {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+.iconWrapper {
+    flex-shrink: 0;
+    width: 96px;
+    height: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconWrapper svg,
+.iconWrapper img {
+    width: 100%;
+    height: 100%;
+    /* Standard slide icon styling */
+    stroke-width: 3px;
+    color: var(--slide-text-muted);
+}
+
+.itemContent {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+}
+
+.itemTitle {
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--slide-text-primary);
+    letter-spacing: -0.01em;
+}
+
+.itemDescription {
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--slide-text-secondary);
+}

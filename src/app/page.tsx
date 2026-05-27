@@ -68,7 +68,7 @@ export default function Home() {
               variant="outline"
               size="xSmall"
               showArrow
-              href="https://www.udrop.com/Oxm2/Andrei-Sundiev_CV.pdf"
+              href="https://www.udrop.com/file/Oxm2/Andrei-Sundiev_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -218,7 +218,7 @@ export default function Home() {
           <Button
             variant="filled"
             size="xSmall"
-            href="https://www.udrop.com/Oxm2/Andrei-Sundiev_CV.pdf"
+            href="https://www.udrop.com/file/Oxm2/Andrei-Sundiev_CV.pdf"
             className={styles.experience__button}
           >
             Download full CV

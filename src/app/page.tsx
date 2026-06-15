@@ -51,7 +51,7 @@ export default function Home() {
               <h2 className={styles.hero__subtitle}>Design leader</h2>
             </div>
             <p className={styles.hero__description}>
-              I've been leading teams and driving change at organisations of various scale for over 12 years. Currently overseeing Product and Marketing Design at Beamery.
+              I've been leading teams and driving change at organisations of various scale for over 12 years. Currently leading Foundations at DevRev.
             </p>
           </div>
           <div className={styles.hero__actions}>
@@ -93,7 +93,7 @@ export default function Home() {
           />
           <div className={styles.whyMe__list}>
             <WhyMeItem
-              title="Spearheading the AI-first transformation in Product & Design org"
+              title="Spearheaded the AI-first transformation in Product & Design org"
               description="Integrated GenAI prototyping into the Product & Design workflows with 100% adoption. Built proof-of-concept prototypes to enable early customer validation for Sales. Initiated the work on the AI-first design system."
               caseStudyUrl="https://pitch.com/v/spearheading-the-ai-first-design-transformation-gsqedn"
               isOpen={openWhyMeIndex === 0}

@@ -5,7 +5,7 @@ const BASE_URL = 'https://asundiev.com';
 
 export const metadata: Metadata = {
   title: 'Andrey Sundiev - Design Leader',
-  description: 'Leading teams and driving change at scale for over 12 years. Currently overseeing Product and Marketing Design at Beamery.',
+  description: 'Leading teams and driving change at scale for over 12 years. Currently leading Foundations at DevRev.',
   metadataBase: new URL(BASE_URL),
   icons: {
     icon: '/images/favicon.png',

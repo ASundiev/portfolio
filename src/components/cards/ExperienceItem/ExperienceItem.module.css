@@ -13,7 +13,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: #FEB579;
+  background: var(--color-black-200);
   border-radius: 12px;
   clip-path: inset(0 100% 0 0);
   transition: clip-path 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);

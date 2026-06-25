@@ -261,6 +261,7 @@
   flex-direction: column;
   width: 100%;
   overflow: visible;
+  counter-reset: whyme;
 }
 
 /* Portfolio Preview Section */

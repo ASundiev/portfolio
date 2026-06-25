@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Plus } from 'phosphor-react';
+import { Plus, Minus } from 'phosphor-react';
 import { Button } from '@/components/ui/Button';
 import styles from './WhyMeItem.module.css';
 
@@ -39,15 +39,13 @@ export const WhyMeItem: React.FC<WhyMeItemProps> = ({
           onClick={onToggle}
           aria-expanded={isOpen}
         >
+          <span className={styles.whyMeItem__index} aria-hidden="true" />
           <span className={styles.whyMeItem__title}>{title}</span>
-          <span className={`${styles.whyMeItem__icon} ${isOpen ? styles['whyMeItem__icon--open'] : ''}`}>
-            <Plus size={24} weight="bold" />
+          <span className={styles.whyMeItem__icon}>
+            {isOpen ? <Minus size={20} /> : <Plus size={20} />}
           </span>
         </button>
-        <div 
-          className={`${styles.whyMeItem__detailsWrapper} ${isOpen ? styles['whyMeItem__detailsWrapper--open'] : ''}`}
-          aria-hidden={!isOpen}
-        >
+        {isOpen && (
           <div className={styles.whyMeItem__detailsInner}>
             <p className={styles.whyMeItem__description}>{description}</p>
             <Button
@@ -62,7 +60,7 @@ export const WhyMeItem: React.FC<WhyMeItemProps> = ({
               View the case study
             </Button>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

@@ -258,7 +258,7 @@ export default function Home() {
               description="Showcasing how we build Arcade design system with DevRev's own Agentic AI."
               imageUrl={imagePaths.articles['8']}
               tag="Webinar"
-              href="https://www.youtube.com/watch?v=JIHJjy9iKYQ"
+              href="https://www.youtube.com/live/JIHJjy9iKYQ?si=0p7U1F4nOa2b6nu0"
             />
             <ArticleCard
               title="Inspect & Reflect Wise com's Design System"

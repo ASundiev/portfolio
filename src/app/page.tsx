@@ -254,6 +254,13 @@ export default function Home() {
           />
           <div className={styles.articles__grid}>
             <ArticleCard
+              title="Ready for AI: design system for the agentic era"
+              description="Showcasing how we build Arcade design system with DevRev's own Agentic AI."
+              imageUrl={imagePaths.articles['8']}
+              tag="Webinar"
+              href="https://www.youtube.com/watch?v=JIHJjy9iKYQ"
+            />
+            <ArticleCard
               title="Inspect & Reflect Wise com's Design System"
               description="Exploring Wise.com's Design System implementation alongside a group of industry professionals"
               imageUrl={imagePaths.articles['1']}

@@ -34,5 +34,6 @@ export const imagePaths = {
     '5': withBasePath('/images/article-5.jpg'),
     '6': withBasePath('/images/article-6.jpg'),
     '7': withBasePath('/images/article-7.jpg'),
+    '8': withBasePath('/images/article-8.jpg'),
   },
 };

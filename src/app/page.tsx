@@ -178,16 +178,13 @@ export default function Home() {
             <div className={styles.experience__list}>
               <ExperienceItem
                 title="Design Director"
-                company="Beamery"
-                period="2021 — 2026"
+                company="DevRev"
+                period="2026 — current"
                 defaultOpen={true}
-                description="Led Product Design and Marketing Design functions. Spearheaded the AI-first transformation of the EPD department. Developed and propagated Product & Design strategy as a part of the Senior Leadership Team."
+                description="Leading the Foundations division (~10 teams): a suite of cross-cutting services for the entire organisation"
                 achievements={[
-                  "Inspired an active phase of work on the company's flagship conversational AI product.",
-                  "Established design review process that de-risked the fast-paced design discovery and provided more transparency to the leadership.",
-                  "Rebuilt Marketing Design as a lean, high-impact function, driving higher engagement and lead generation while cutting spend on critical assets. The team's customer satisfaction was boosted by +16% YoY (CSAT: 92%) and eNPS by +8% (eNPS: 92).",
-                  "Contributed to 6x increase in deal close rate and 2x increase in deal size by enabling Sales with templates and automations.",
-                  "Saved more than 33,845 engineering hours (~£5m in savings) to the business over 1.5 years by leading the implementation of a company-wide design system.",
+                  <>Established and made operational the design system team. <strong>Reducing the entropy and fragmentation in the product</strong>. Increasing the product velocity through tooling, systems and operations.</>,
+                  <>Facilitating <strong>AI-first design culture</strong>.</>,
                 ]}
 
               />

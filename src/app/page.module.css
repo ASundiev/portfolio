@@ -179,7 +179,7 @@
 .whyMe {
   background: var(--color-paper);
   width: 100%;
-  padding: var(--spacing-88) var(--spacing-240);
+  padding: var(--spacing-88) var(--spacing-80);
   display: flex;
   gap: var(--spacing-8);
   align-items: flex-start;
@@ -204,7 +204,7 @@
 /* Initially paused animations act as the hidden state */
 .whyMe__header {
   background: transparent;
-  padding-left: 24px;
+  padding-left: 0;
   animation: heroReveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both paused;
 }
 
@@ -249,6 +249,7 @@
   flex-direction: column;
   gap: var(--spacing-16);
   flex: 1;
+  max-width: 1280px;
   overflow: visible;
 }
 

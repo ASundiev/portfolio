@@ -3,6 +3,34 @@
 .experienceItem {
   border-bottom: 1px solid var(--color-black-300);
   width: 100%;
+  position: relative;
+  z-index: 1;
+  padding: 0 var(--spacing-16);
+  transition: border-bottom-color 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.experienceItem:not(.experienceItem--open)::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #FEB579;
+  border-radius: 12px;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.experienceItem:not(.experienceItem--open):hover::before {
+  clip-path: inset(0 0 0 0);
+}
+
+.experienceItem:not(.experienceItem--open):hover {
+  border-bottom-color: transparent;
+}
+
+.experienceItem:has(+ .experienceItem:hover:not(.experienceItem--open)) {
+  border-bottom-color: transparent;
 }
 
 /* Hide icon variant */
@@ -16,7 +44,7 @@
   pointer-events: none;
 }
 
-/* Hover effect on collapsed rows */
+/* Hover text/icon darkening on collapsed rows */
 .experienceItem:not(.experienceItem--open) .experienceItem__header:hover .experienceItem__title,
 .experienceItem:not(.experienceItem--open) .experienceItem__header:hover .experienceItem__period {
   color: var(--color-black-900);

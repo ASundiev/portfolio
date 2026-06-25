@@ -207,19 +207,25 @@ export default function Home() {
                 title="Product Designer"
                 company="Intercom"
                 period="2018 — 2021"
+                defaultOpen={true}
+                description="Leading the Foundations division (~10 teams): a suite of cross-cutting services for the entire organisation"
+                achievements={[
+                  <>Established and made operational the design system team. <strong>Reducing the entropy and fragmentation in the product</strong>. Increasing the product velocity through tooling, systems and operations.</>,
+                  <>Facilitating <strong>AI-first design culture</strong>.</>,
+                ]}
 
               />
               <ExperienceItem
                 title="Chief Designer"
                 company="Mail.Ru Group"
                 period="2016 — 2018"
-
+                interactive={false}
               />
               <ExperienceItem
                 title="Product Design Lead"
                 company="Yandex"
                 period="2013 — 2016"
-
+                interactive={false}
               />
             </div>
           </div>

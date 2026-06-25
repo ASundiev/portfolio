@@ -52,14 +52,12 @@ export const ExperienceItem: React.FC<ExperienceItemProps> = ({
         onClick={toggleOpen}
         aria-expanded={isOpen}
       >
-        <div className={styles.experienceItem__content}>
-          <span className={styles.experienceItem__title}>
-            {title} — {company}
-          </span>
-          <span className={styles.experienceItem__period}>{period}</span>
-        </div>
+        <span className={styles.experienceItem__period}>{period}</span>
+        <span className={styles.experienceItem__role}>
+          {title} <span className={styles.experienceItem__company}>/ {company}</span>
+        </span>
         <div className={styles.experienceItem__icon}>
-          {isOpen ? <Minus size={24} /> : <Plus size={24} />}
+          {isOpen ? <Minus size={20} /> : <Plus size={20} />}
         </div>
       </button>
       {isOpen && (description || achievements) && (

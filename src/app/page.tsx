@@ -181,11 +181,13 @@ export default function Home() {
       {/* Experience Section */}
       <section className={styles.experience} id="experience">
         <div className={styles.experience__content}>
-          <div className={styles.experience__grid}>
-            <div className={styles.experience__title}>
-              <span className={styles.experience__label}>E X P E R I E N C E</span>
-            </div>
-            <div className={styles.experience__list}>
+          <SectionHeader
+            title="Experience"
+            alignment="left"
+            size="big"
+            className={styles.experience__header}
+          />
+          <div className={styles.experience__list}>
               <ExperienceItem
                 title="Design Director"
                 company="DevRev"
@@ -240,7 +242,6 @@ export default function Home() {
                 interactive={false}
                 hideIcon
               />
-            </div>
           </div>
           <Button
             variant="filled"

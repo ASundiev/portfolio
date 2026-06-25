@@ -312,82 +312,30 @@
 .experience {
   background: var(--color-white);
   width: 100%;
-  padding: var(--spacing-80) 0;
+  padding: var(--spacing-80);
   display: flex;
-  gap: var(--spacing-32);
-  align-items: flex-start;
   justify-content: center;
 }
 
 .experience__content {
-  background: var(--color-brand);
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-40);
-  padding: var(--spacing-80) 80px;
-  align-items: flex-start;
-
-  width: calc(100% - 160px);
-  margin: 0 80px;
-  max-width: 1440px;
-  border-radius: var(--radius-40);
-  border: 1px solid var(--color-line);
-  box-sizing: border-box;
-}
-
-.experience__grid {
-  display: flex;
+  gap: var(--spacing-48);
   width: 100%;
-  align-items: flex-start;
-  position: relative;
-}
-
-.experience__title {
-  display: flex;
-  gap: var(--spacing-8);
-  align-items: center;
-  justify-content: flex-end;
-  /* Align content to the "end" (visual top) */
-  flex-shrink: 0;
-
-  position: absolute;
-  left: 0;
-  top: 24px;
-  /* Align with content padding */
-
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  width: auto;
-  height: auto;
-  white-space: nowrap;
-}
-
-.experience__icon {
-  color: var(--color-black-700);
-  transform: rotate(180deg);
-}
-
-.experience__label {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 26px;
-  color: var(--color-black-700);
-  letter-spacing: 0.1em;
+  max-width: 1280px;
 }
 
 .experience__list {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-24);
-  flex: 1;
   width: 100%;
-  margin-left: 100px;
 }
 
 .experience__button {
-  background: var(--color-black-700);
+  background: var(--color-ink);
+  border-color: var(--color-ink);
   color: var(--color-white);
-  margin-left: 100px;
+  align-self: flex-start;
 }
 
 /* Articles Section */
@@ -446,33 +394,8 @@
     gap: var(--spacing-16);
   }
 
-  .experience__content {
+  .experience {
     padding: var(--spacing-56) var(--spacing-24);
-    width: 100%;
-    margin: 0;
-    border-radius: 0;
-  }
-
-  .experience__grid {
-    flex-direction: column;
-    gap: var(--spacing-32);
-  }
-
-  .experience__title {
-    position: static;
-    transform: none;
-    writing-mode: horizontal-tb;
-    justify-content: flex-start;
-    width: 100%;
-    margin-bottom: var(--spacing-24);
-  }
-
-  .experience__list {
-    margin-left: 0;
-  }
-
-  .experience__button {
-    margin-left: 0;
   }
 
   .articles {
@@ -516,12 +439,8 @@
     padding: var(--spacing-40) var(--spacing-16);
   }
 
-  .experience__content {
+  .experience {
     padding: var(--spacing-40) var(--spacing-16);
-  }
-
-  .experience__list {
-    width: 100%;
   }
 
   .articles__grid {

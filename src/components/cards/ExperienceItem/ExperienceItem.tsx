@@ -9,7 +9,7 @@ export interface ExperienceItemProps {
   company: string;
   period: string;
   description?: string;
-  achievements?: string[];
+  achievements?: React.ReactNode[];
   className?: string;
   defaultOpen?: boolean;
   hideIcon?: boolean;

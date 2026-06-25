@@ -3,6 +3,34 @@
 .experienceItem {
   border-bottom: 1px solid var(--color-black-300);
   width: 100%;
+  position: relative;
+  z-index: 1;
+  padding: 0 var(--spacing-16);
+  transition: border-bottom-color 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.experienceItem:not(.experienceItem--open):not(.experienceItem--nonInteractive)::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(210,188,169,0.24);
+  border-radius: 12px;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.experienceItem:not(.experienceItem--open):not(.experienceItem--nonInteractive):hover::before {
+  clip-path: inset(0 0 0 0);
+}
+
+.experienceItem:not(.experienceItem--open):not(.experienceItem--nonInteractive):hover {
+  border-bottom-color: transparent;
+}
+
+.experienceItem:has(+ .experienceItem:not(.experienceItem--nonInteractive):hover:not(.experienceItem--open)) {
+  border-bottom-color: transparent;
 }
 
 /* Hide icon variant */
@@ -14,6 +42,16 @@
 .experienceItem--nonInteractive .experienceItem__header {
   cursor: default;
   pointer-events: none;
+}
+
+/* Hover text/icon darkening on collapsed rows */
+.experienceItem:not(.experienceItem--open):not(.experienceItem--nonInteractive) .experienceItem__header:hover .experienceItem__title,
+.experienceItem:not(.experienceItem--open):not(.experienceItem--nonInteractive) .experienceItem__header:hover .experienceItem__period {
+  color: var(--color-black-900);
+}
+
+.experienceItem:not(.experienceItem--open):not(.experienceItem--nonInteractive) .experienceItem__header:hover .experienceItem__icon {
+  color: var(--color-black-700);
 }
 
 .experienceItem__header {
@@ -66,7 +104,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-black-700);
+  color: var(--color-black-400);
   flex-shrink: 0;
 }
 

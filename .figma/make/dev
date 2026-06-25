@@ -1,0 +1,4 @@
+#!/bin/bash
+set -euo pipefail
+
+npx next dev --port "${PORT:-3000}"

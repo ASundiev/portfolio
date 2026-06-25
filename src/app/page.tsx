@@ -178,10 +178,22 @@ export default function Home() {
             <div className={styles.experience__list}>
               <ExperienceItem
                 title="Design Director"
-                company="Beamery"
-                period="2021 — Current"
+                company="DevRev"
+                period="2026 — current"
                 defaultOpen={true}
-                description="Overseeing Product Design and Marketing Design functions. Spearheading the AI-first transformation of the EPD department. Developing and propagating Product & Design strategy as a part of the Senior Leadership Team."
+                description="Leading the Foundations division (~10 teams): a suite of cross-cutting services for the entire organisation"
+                achievements={[
+                  <>Established and made operational the design system team. <strong>Reducing the entropy and fragmentation in the product</strong>. Increasing the product velocity through tooling, systems and operations.</>,
+                  <>Facilitating <strong>AI-first design culture</strong>.</>,
+                ]}
+
+              />
+              <ExperienceItem
+                title="Design Director"
+                company="Beamery"
+                period="2021 — 2026"
+                defaultOpen={true}
+                description="Led Product Design and Marketing Design functions. Spearheaded the AI-first transformation of the EPD department. Developed and propagated Product & Design strategy as a part of the Senior Leadership Team."
                 achievements={[
                   "Inspired an active phase of work on the company's flagship conversational AI product.",
                   "Established design review process that de-risked the fast-paced design discovery and provided more transparency to the leadership.",
@@ -189,29 +201,34 @@ export default function Home() {
                   "Contributed to 6x increase in deal close rate and 2x increase in deal size by enabling Sales with templates and automations.",
                   "Saved more than 33,845 engineering hours (~£5m in savings) to the business over 1.5 years by leading the implementation of a company-wide design system.",
                 ]}
-                hideIcon={true}
-                interactive={false}
+
               />
               <ExperienceItem
                 title="Product Designer"
                 company="Intercom"
                 period="2018 — 2021"
-                hideIcon={true}
-                interactive={false}
+                defaultOpen={true}
+                description="Drove the development of the design system, and brought it to high maturity and adoption with 50+ components, internal Figma plugins, and a Mac app."
+                achievements={[
+                  <><strong>Saved 40+ engineering days</strong> and achieved <strong>100% designer engagement</strong> during the pilot launch by transitioning the design system to a federated model.</>,
+                  <>Enhanced the Reporting product, leading to a <strong>42% increase in report views</strong>, <strong>+3% increase of Weekly Active Users</strong> and zero customer churn.</>,
+                  <>Launched several internal Figma plugins that <strong>streamlined designers&#39; workflows</strong> and <strong>increased design consistency</strong>. Developed <strong>onboarding processes</strong> for new designers and <strong>improved the design critique process</strong>.</>,
+                ]}
+
               />
               <ExperienceItem
                 title="Chief Designer"
                 company="Mail.Ru Group"
                 period="2016 — 2018"
-                hideIcon={true}
                 interactive={false}
+                hideIcon
               />
               <ExperienceItem
                 title="Product Design Lead"
                 company="Yandex"
                 period="2013 — 2016"
-                hideIcon={true}
                 interactive={false}
+                hideIcon
               />
             </div>
           </div>
@@ -236,6 +253,13 @@ export default function Home() {
             className={styles.articles__header}
           />
           <div className={styles.articles__grid}>
+            <ArticleCard
+              title="Ready for AI: design system for the agentic era"
+              description="Showcasing how we build Arcade design system with DevRev's own Agentic AI."
+              imageUrl={imagePaths.articles['8']}
+              tag="Webinar"
+              href="https://www.youtube.com/live/JIHJjy9iKYQ?si=0p7U1F4nOa2b6nu0"
+            />
             <ArticleCard
               title="Inspect & Reflect Wise com's Design System"
               description="Exploring Wise.com's Design System implementation alongside a group of industry professionals"

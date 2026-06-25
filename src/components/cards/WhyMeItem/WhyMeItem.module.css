@@ -3,6 +3,7 @@
 .whyMeItem {
   width: 100%;
   position: relative;
+  isolation: isolate;
   background: transparent;
   counter-increment: whyme;
 }
@@ -19,6 +20,23 @@
 /* Expanded state — flat, no card */
 .whyMeItem--open .whyMeItem__content {
   gap: var(--spacing-16);
+}
+
+/* Subtle clip-path hover sweep on collapsed rows */
+.whyMeItem:not(.whyMeItem--open)::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(29, 78, 216, 0.05);
+  border-radius: 2px;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.whyMeItem:not(.whyMeItem--open):hover::before {
+  clip-path: inset(0 0 0 0);
 }
 
 .whyMeItem__header {

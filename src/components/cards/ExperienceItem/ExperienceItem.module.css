@@ -16,10 +16,14 @@
   pointer-events: none;
 }
 
-/* Hover effect */
-.experienceItem__header:hover .experienceItem__title,
-.experienceItem__header:hover .experienceItem__period {
+/* Hover effect on collapsed rows */
+.experienceItem:not(.experienceItem--open) .experienceItem__header:hover .experienceItem__title,
+.experienceItem:not(.experienceItem--open) .experienceItem__header:hover .experienceItem__period {
   color: var(--color-black-900);
+}
+
+.experienceItem:not(.experienceItem--open) .experienceItem__header:hover .experienceItem__icon {
+  color: var(--color-black-700);
 }
 
 .experienceItem--nonInteractive .experienceItem__header:hover .experienceItem__title,
@@ -77,7 +81,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-black-700);
+  color: var(--color-black-400);
   flex-shrink: 0;
 }
 

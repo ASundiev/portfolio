@@ -26,8 +26,8 @@
 .whyMeItem:not(.whyMeItem--open)::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: rgba(29, 78, 216, 0.05);
+  inset: 0 calc(var(--spacing-24) * -1);
+  background: rgba(10, 10, 10, 0.03);
   border-radius: 2px;
   clip-path: inset(0 100% 0 0);
   transition: clip-path 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);

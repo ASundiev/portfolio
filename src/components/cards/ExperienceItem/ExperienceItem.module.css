@@ -16,6 +16,17 @@
   pointer-events: none;
 }
 
+/* Hover effect */
+.experienceItem__header:hover .experienceItem__title,
+.experienceItem__header:hover .experienceItem__period {
+  color: var(--color-black-900);
+}
+
+.experienceItem--nonInteractive .experienceItem__header:hover .experienceItem__title,
+.experienceItem--nonInteractive .experienceItem__header:hover .experienceItem__period {
+  color: var(--color-black-700);
+}
+
 .experienceItem__header {
   display: flex;
   align-items: center;

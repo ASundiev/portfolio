@@ -189,8 +189,7 @@ export default function Home() {
                   "Contributed to 6x increase in deal close rate and 2x increase in deal size by enabling Sales with templates and automations.",
                   "Saved more than 33,845 engineering hours (~£5m in savings) to the business over 1.5 years by leading the implementation of a company-wide design system.",
                 ]}
-                hideIcon={true}
-                interactive={false}
+
               />
               <ExperienceItem
                 title="Design Director"
@@ -205,29 +204,25 @@ export default function Home() {
                   "Contributed to 6x increase in deal close rate and 2x increase in deal size by enabling Sales with templates and automations.",
                   "Saved more than 33,845 engineering hours (~£5m in savings) to the business over 1.5 years by leading the implementation of a company-wide design system.",
                 ]}
-                hideIcon={true}
-                interactive={false}
+
               />
               <ExperienceItem
                 title="Product Designer"
                 company="Intercom"
                 period="2018 — 2021"
-                hideIcon={true}
-                interactive={false}
+
               />
               <ExperienceItem
                 title="Chief Designer"
                 company="Mail.Ru Group"
                 period="2016 — 2018"
-                hideIcon={true}
-                interactive={false}
+
               />
               <ExperienceItem
                 title="Product Design Lead"
                 company="Yandex"
                 period="2013 — 2016"
-                hideIcon={true}
-                interactive={false}
+
               />
             </div>
           </div>

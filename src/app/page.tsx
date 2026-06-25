@@ -208,10 +208,11 @@ export default function Home() {
                 company="Intercom"
                 period="2018 — 2021"
                 defaultOpen={true}
-                description="Leading the Foundations division (~10 teams): a suite of cross-cutting services for the entire organisation"
+                description="Drove the development of the design system, and brought it to high maturity and adoption with 50+ components, internal Figma plugins, and a Mac app."
                 achievements={[
-                  <>Established and made operational the design system team. <strong>Reducing the entropy and fragmentation in the product</strong>. Increasing the product velocity through tooling, systems and operations.</>,
-                  <>Facilitating <strong>AI-first design culture</strong>.</>,
+                  <><strong>Saved 40+ engineering days</strong> and achieved <strong>100% designer engagement</strong> during the pilot launch by transitioning the design system to a federated model.</>,
+                  <>Enhanced the Reporting product, leading to a <strong>42% increase in report views</strong>, <strong>+3% increase of Weekly Active Users</strong> and zero customer churn.</>,
+                  <>Launched several internal Figma plugins that <strong>streamlined designers&#39; workflows</strong> and <strong>increased design consistency</strong>. Developed <strong>onboarding processes</strong> for new designers and <strong>improved the design critique process</strong>.</>,
                 ]}
 
               />

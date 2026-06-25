@@ -9,7 +9,7 @@
   transition: border-bottom-color 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.experienceItem:not(.experienceItem--open)::before {
+.experienceItem:not(.experienceItem--open):not(.experienceItem--nonInteractive)::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -21,15 +21,15 @@
   pointer-events: none;
 }
 
-.experienceItem:not(.experienceItem--open):hover::before {
+.experienceItem:not(.experienceItem--open):not(.experienceItem--nonInteractive):hover::before {
   clip-path: inset(0 0 0 0);
 }
 
-.experienceItem:not(.experienceItem--open):hover {
+.experienceItem:not(.experienceItem--open):not(.experienceItem--nonInteractive):hover {
   border-bottom-color: transparent;
 }
 
-.experienceItem:has(+ .experienceItem:hover:not(.experienceItem--open)) {
+.experienceItem:has(+ .experienceItem:not(.experienceItem--nonInteractive):hover:not(.experienceItem--open)) {
   border-bottom-color: transparent;
 }
 
@@ -45,17 +45,12 @@
 }
 
 /* Hover text/icon darkening on collapsed rows */
-.experienceItem:not(.experienceItem--open) .experienceItem__header:hover .experienceItem__title,
-.experienceItem:not(.experienceItem--open) .experienceItem__header:hover .experienceItem__period {
+.experienceItem:not(.experienceItem--open):not(.experienceItem--nonInteractive) .experienceItem__header:hover .experienceItem__title,
+.experienceItem:not(.experienceItem--open):not(.experienceItem--nonInteractive) .experienceItem__header:hover .experienceItem__period {
   color: var(--color-black-900);
 }
 
-.experienceItem:not(.experienceItem--open) .experienceItem__header:hover .experienceItem__icon {
-  color: var(--color-black-700);
-}
-
-.experienceItem--nonInteractive .experienceItem__header:hover .experienceItem__title,
-.experienceItem--nonInteractive .experienceItem__header:hover .experienceItem__period {
+.experienceItem:not(.experienceItem--open):not(.experienceItem--nonInteractive) .experienceItem__header:hover .experienceItem__icon {
   color: var(--color-black-700);
 }
 

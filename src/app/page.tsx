@@ -220,12 +220,14 @@ export default function Home() {
                 company="Mail.Ru Group"
                 period="2016 — 2018"
                 interactive={false}
+                hideIcon
               />
               <ExperienceItem
                 title="Product Design Lead"
                 company="Yandex"
                 period="2013 — 2016"
                 interactive={false}
+                hideIcon
               />
             </div>
           </div>

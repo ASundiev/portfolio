@@ -179,9 +179,9 @@ export default function Home() {
               <ExperienceItem
                 title="Design Director"
                 company="Beamery"
-                period="2021 — Current"
+                period="2021 — 2026"
                 defaultOpen={true}
-                description="Overseeing Product Design and Marketing Design functions. Spearheading the AI-first transformation of the EPD department. Developing and propagating Product & Design strategy as a part of the Senior Leadership Team."
+                description="Led Product Design and Marketing Design functions. Spearheaded the AI-first transformation of the EPD department. Developed and propagated Product & Design strategy as a part of the Senior Leadership Team."
                 achievements={[
                   "Inspired an active phase of work on the company's flagship conversational AI product.",
                   "Established design review process that de-risked the fast-paced design discovery and provided more transparency to the leadership.",

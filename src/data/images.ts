@@ -10,6 +10,7 @@ const withBasePath = (path: string) => `${BASE_PATH}${path}`;
 
 export const imagePaths = {
   profile: withBasePath('/images/profile.jpg'),
+  portrait: withBasePath('/images/avatar-portrait.png'),
 
   portfolio: {
     '1': withBasePath('/images/portfolio-1.mp4'),

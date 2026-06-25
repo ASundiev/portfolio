@@ -1,9 +1,20 @@
 /* Footer styles */
 
 .footer {
-  background: var(--color-orange-300);
+  background: var(--color-ink);
   padding: var(--spacing-104) var(--spacing-80);
   width: 100%;
+}
+
+/* Badges sit on a dark ground in the footer */
+.footer :global(.badge) {
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  color: #ffffff !important;
+}
+
+.footer :global(.badge):hover {
+  background: #ffffff !important;
+  color: var(--color-ink) !important;
 }
 
 .footer__container {
@@ -25,11 +36,12 @@
 }
 
 .footer__email {
-  font-size: 84px;
+  font-family: var(--font-display);
+  font-size: 72px;
   font-weight: 600;
-  line-height: 89px;
-  letter-spacing: -3.5px;
-  color: var(--color-black-700);
+  line-height: 0.95;
+  letter-spacing: -3px;
+  color: var(--color-white);
   margin: 0;
 }
 
@@ -52,17 +64,18 @@
 }
 
 .footer__menuItem {
-  font-size: 16px;
-  font-weight: 600;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 400;
   line-height: 26px;
-  color: var(--color-black-700);
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  transition: color 0.2s ease;
   white-space: nowrap; /* Prevent "Articles & talks" from wrapping */
 }
 
 .footer__menuItem:hover {
-  opacity: 0.7;
+  color: #ffffff;
 }
 
 /* Responsive */

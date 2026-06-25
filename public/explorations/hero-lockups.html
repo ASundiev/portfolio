@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hero lockup options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&family=Martian+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --font-display:'Bricolage Grotesque',sans-serif;
+    --font-body:'Hanken Grotesk',sans-serif;
+    --font-mono:'Martian Mono',monospace;
+    --bg:#FBFBFA;--ink:#0A0A0A;--ink-60:#585854;--ink-30:#9C9C97;--line:#0A0A0A14;--accent:#1D4ED8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--font-body);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;padding:64px 56px 96px}
+  .head{max-width:760px;margin:0 auto 48px}
+  .head h1{font-family:var(--font-display);font-size:28px;font-weight:600;letter-spacing:-.02em}
+  .head p{font-size:15px;color:var(--ink-60);margin-top:8px}
+  .opt{max-width:760px;margin:0 auto;border-top:1px solid var(--line);padding:44px 0}
+  .opt:last-child{border-bottom:1px solid var(--line)}
+  .tag{font-family:var(--font-mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-30);margin-bottom:28px}
+  .tag b{color:var(--accent);font-weight:500}
+  .mono{font-family:var(--font-mono)}
+  .name{font-family:var(--font-display);font-weight:700;font-size:76px;line-height:.9;letter-spacing:-.035em}
+
+  /* 01 baseline */
+  .o1 .role{display:block;font-family:var(--font-display);font-weight:500;font-size:76px;line-height:.9;letter-spacing:-.035em;color:var(--ink-30)}
+
+  /* 02 mono kicker */
+  .o2 .kick{font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-60);margin-bottom:20px;display:block}
+  .o2 .kick .tk{color:var(--accent)}
+
+  /* 03 cobalt role */
+  .o3 .role{display:block;font-family:var(--font-display);font-weight:600;font-size:76px;line-height:.9;letter-spacing:-.035em;color:var(--accent)}
+
+  /* 04 flipped — statement led */
+  .o4 .kick{font-family:var(--font-mono);font-size:14px;letter-spacing:.02em;color:var(--ink-60);margin-bottom:18px;display:block}
+  .o4 .big{font-family:var(--font-display);font-weight:800;font-size:96px;line-height:.88;letter-spacing:-.04em}
+  .o4 .sub{font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-30);margin-top:22px;display:block}
+
+  /* 05 tagged chip */
+  .o5 .chip{display:inline-block;margin-top:24px;font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);border:1px solid var(--ink);padding:8px 14px}
+  .o5 .chip .tk{color:var(--accent)}
+</style>
+</head>
+<body>
+  <div class="head">
+    <h1>Hero lockup — options</h1>
+    <p>Same content, five treatments of the name + role. All in the agent-native C system (Bricolage display, Martian Mono metadata, cobalt accent).</p>
+  </div>
+
+  <div class="opt o1">
+    <div class="tag">Option 01 — <b>Current</b> · ghosted role</div>
+    <h2 class="name">Andrey<br>Sundiev<span class="role">Design leader</span></h2>
+  </div>
+
+  <div class="opt o2">
+    <div class="tag">Option 02 — Mono kicker · solid name</div>
+    <span class="kick"><span class="tk">//</span> design leader · foundations, devrev</span>
+    <h2 class="name">Andrey<br>Sundiev</h2>
+  </div>
+
+  <div class="opt o3" id="o3">
+    <div class="tag">Option 03 — Cobalt role · brand colour in the lockup</div>
+    <h2 class="name">Andrey<br>Sundiev<span class="role">Design leader</span></h2>
+  </div>
+
+  <div class="opt o4" id="o4">
+    <div class="tag">Option 04 — Flipped · positioning is the hero</div>
+    <span class="kick mono">andrey_sundiev</span>
+    <span class="big">Design<br>leader.</span>
+    <span class="sub">// 13+ yrs · foundations, devrev</span>
+  </div>
+
+  <div class="opt o5" id="o5">
+    <div class="tag">Option 05 — Tagged role · structured chip</div>
+    <h2 class="name">Andrey<br>Sundiev</h2>
+    <span class="chip">[ <span class="tk">●</span> design leader ]</span>
+  </div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Direction A — Editorial Index</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#FAFAF8;
+    --ink:#111111;
+    --ink-60:#6B6B68;
+    --ink-30:#B8B8B4;
+    --line:#1111111A;
+    --accent:#E2402A;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Archivo',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.4;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:0 40px}
+  a{color:inherit;text-decoration:none}
+  .label{
+    font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-60);
+  }
+  .num{color:var(--accent);font-weight:700}
+
+  /* NAV */
+  nav{display:flex;align-items:center;justify-content:space-between;padding:28px 40px;max-width:1180px;margin:0 auto;border-bottom:1px solid var(--line)}
+  nav .brand{font-weight:700;letter-spacing:-.02em;font-size:16px}
+  nav .links{display:flex;gap:32px}
+  nav .links a{font-size:14px;font-weight:500;color:var(--ink-60);transition:color .2s}
+  nav .links a:hover{color:var(--ink)}
+
+  /* HERO */
+  .hero{padding:96px 0 80px}
+  .hero .topline{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:40px}
+  .hero h1{
+    font-size:clamp(64px,11vw,148px);font-weight:800;line-height:.92;letter-spacing:-.04em;
+  }
+  .hero h1 .role{display:block;color:var(--ink-30);font-weight:500}
+  .hero .meta{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:56px;align-items:start}
+  .hero .desc{max-width:520px;font-size:19px;line-height:1.55;color:var(--ink)}
+  .hero .actions{display:flex;gap:28px;justify-self:end;align-items:center}
+  .hero .actions a{font-size:15px;font-weight:600;border-bottom:1.5px solid var(--ink);padding-bottom:3px}
+  .hero .actions a.alt{color:var(--accent);border-color:var(--accent)}
+
+  /* SECTION HEAD */
+  .sec{padding:64px 0;border-top:1px solid var(--ink)}
+  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:40px}
+  .sechead h2{font-size:32px;font-weight:700;letter-spacing:-.02em}
+
+  /* WORK */
+  .work{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .work .item img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;filter:grayscale(.1)}
+  .work .item .cap{margin-top:14px}
+  .work .item .t{font-size:17px;font-weight:600;line-height:1.3;letter-spacing:-.01em}
+  .work .item .y{margin-top:6px}
+
+  /* EXPERIENCE TABLE */
+  .exp .row{display:grid;grid-template-columns:140px 1fr auto;gap:24px;align-items:baseline;padding:22px 0;border-top:1px solid var(--line)}
+  .exp .row:last-child{border-bottom:1px solid var(--line)}
+  .exp .yr{font-size:14px;font-weight:600;color:var(--accent);letter-spacing:.02em}
+  .exp .role{font-size:22px;font-weight:600;letter-spacing:-.01em}
+  .exp .role span{color:var(--ink-60);font-weight:400}
+  .exp .arrow{color:var(--ink-30);font-size:18px}
+
+  /* ARTICLES */
+  .arts{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .arts .a img{width:100%;aspect-ratio:16/10;object-fit:cover}
+  .arts .a .tag{margin-top:14px}
+  .arts .a .t{margin-top:8px;font-size:18px;font-weight:600;line-height:1.3;letter-spacing:-.01em}
+
+  footer{padding:80px 0 64px;border-top:1px solid var(--ink);margin-top:24px;display:flex;justify-content:space-between;align-items:baseline}
+  footer .big{font-size:40px;font-weight:800;letter-spacing:-.03em}
+</style>
+</head>
+<body>
+  <nav>
+    <div class="brand">Andrey Sundiev</div>
+    <div class="links">
+      <a href="#">Home</a><a href="#">Work</a><a href="#">Projects</a><a href="#">Experience</a><a href="#">Articles &amp; talks</a>
+    </div>
+  </nav>
+
+  <header class="hero wrap">
+    <div class="topline">
+      <span class="label">Design Director · Foundations, DevRev</span>
+      <span class="label"><span class="num">12</span>&nbsp;Years in practice</span>
+    </div>
+    <h1>Andrey<br>Sundiev<span class="role">Design leader</span></h1>
+    <div class="meta">
+      <p class="desc">I've been leading teams and driving change at organisations of various scale for over 12 years. Currently leading Foundations at DevRev.</p>
+      <div class="actions">
+        <a href="#">LinkedIn</a>
+        <a class="alt" href="#">Download CV ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="sec wrap work-sec">
+    <div class="sechead"><span class="label">01 —</span><h2>Selected work</h2></div>
+    <div class="work">
+      <div class="item">
+        <img src="/images/portfolio-3.png" alt="" />
+        <div class="cap"><div class="t">Spearheading the AI-first design transformation</div><div class="y label">2025 · Design Director</div></div>
+      </div>
+      <div class="item">
+        <img src="/images/portfolio-5.png" alt="" />
+        <div class="cap"><div class="t">Setting up the design team for 2× productivity</div><div class="y label">2023 · Design Manager</div></div>
+      </div>
+      <div class="item">
+        <img src="/images/portfolio-6.jpg" alt="" />
+        <div class="cap"><div class="t">Custom Reporting at Intercom</div><div class="y label">2020 · Product Designer</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec wrap exp">
+    <div class="sechead"><span class="label">02 —</span><h2>Experience</h2></div>
+    <div class="row"><div class="yr">2026 — Current</div><div class="role">Design Director <span>· DevRev</span></div><div class="arrow">↗</div></div>
+    <div class="row"><div class="yr">2021 — 2026</div><div class="role">Design Director <span>· Beamery</span></div><div class="arrow">↗</div></div>
+    <div class="row"><div class="yr">2018 — 2021</div><div class="role">Product Designer <span>· Intercom</span></div><div class="arrow">↗</div></div>
+    <div class="row"><div class="yr">2016 — 2018</div><div class="role">Chief Designer <span>· Mail.Ru Group</span></div><div class="arrow"></div></div>
+    <div class="row"><div class="yr">2013 — 2016</div><div class="role">Product Design Lead <span>· Yandex</span></div><div class="arrow"></div></div>
+  </section>
+
+  <section class="sec wrap">
+    <div class="sechead"><span class="label">03 —</span><h2>Articles &amp; talks</h2></div>
+    <div class="arts">
+      <div class="a"><img src="/images/article-8.jpg" alt="" /><div class="tag label">Webinar</div><div class="t">Ready for AI: design system for the agentic era</div></div>
+      <div class="a"><img src="/images/article-1.jpg" alt="" /><div class="tag label">Webinar</div><div class="t">Inspect &amp; Reflect Wise.com's Design System</div></div>
+      <div class="a"><img src="/images/article-2.jpg" alt="" /><div class="tag label">Podcast</div><div class="t">Design Systems and the Volatile Economy</div></div>
+    </div>
+  </section>
+
+  <footer class="wrap">
+    <div class="big">Let's talk →</div>
+    <div class="label">Andrey Sundiev · © 2026</div>
+  </footer>
+</body>
+</html>

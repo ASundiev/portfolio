@@ -27,18 +27,12 @@
 
 /* Expanded state */
 .whyMeItem--open {
-  background: #FEB579;
-  box-shadow: 
-    0px 320px 90px 0px rgba(111, 62, 21, 0.00), 
-    0px 205px 82px 0px rgba(111, 62, 21, 0.01), 
-    0px 115px 69px 0px rgba(111, 62, 21, 0.03), 
-    0px 51px 51px 0px rgba(111, 62, 21, 0.04), 
-    0px 13px 28px 0px rgba(111, 62, 21, 0.05);
+  background: rgba(29, 78, 216, 0.05);
+  border: 1px solid var(--color-line);
   border-radius: var(--radius-24);
   padding: var(--spacing-24);
   margin: var(--spacing-16) 0;
-  border: none;
-  z-index: 10; /* Raise above other items for shadow */
+  z-index: 10;
 }
 
 /* Expanded state resets */
@@ -53,8 +47,8 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: #FEB579;
-  border-radius: 12px;
+  background: rgba(29, 78, 216, 0.07);
+  border-radius: 2px;
   clip-path: inset(0 100% 0 0);
   transition: clip-path 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
   z-index: -1; /* Behind content */
@@ -90,10 +84,11 @@
 }
 
 .whyMeItem__title {
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 20px;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 21px;
   line-height: 28px;
+  letter-spacing: -0.01em;
   color: var(--color-black-700);
   flex: 1;
 }
@@ -133,16 +128,17 @@
 }
 
 .whyMeItem__description {
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
+  font-family: var(--font-body);
+  font-weight: 400;
   font-size: 16px;
   line-height: 26px;
-  color: var(--color-black-900);
+  color: var(--color-ink-60);
   margin: 0;
 }
 
 .whyMeItem__button {
-  background: var(--color-black-700);
+  background: var(--color-ink);
+  border-color: var(--color-ink);
   color: var(--color-white);
   align-self: flex-start;
 }

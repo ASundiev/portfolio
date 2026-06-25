@@ -33,48 +33,58 @@ export default function Home() {
       <section className={styles.hero}>
         <div className={styles.hero__container}>
           <div className={styles.hero__content}>
-            <div className={styles.hero__title}>
-              <div className={styles.hero__nameLine}>
-                <h1 className={styles.hero__firstName}>Andrey</h1>
-                <div className={styles.hero__avatar}>
-                  <Image
-                    src={imagePaths.profile}
-                    alt="Andrey Sundiev"
-                    width={80}
-                    height={80}
-                    className={styles.hero__avatarImage}
-                    style={{ objectFit: 'cover' }}
-                  />
-                </div>
-                <h1 className={styles.hero__lastName}>Sundiev</h1>
-              </div>
-              <h2 className={styles.hero__subtitle}>Design leader</h2>
-            </div>
+            <span className={styles.hero__kicker}>
+              <span className={styles.tk}>//</span> design director · foundations, devrev
+            </span>
+            <h1 className={styles.hero__name}>
+              Andrey<br />Sundiev
+            </h1>
             <p className={styles.hero__description}>
-              I've been leading teams and driving change at organisations of various scale for over 12 years. Currently leading Foundations at DevRev.
+              I make design a force multiplier: design systems that cut cost, teams that ship, and an AI-first practice that keeps both moving.
             </p>
+            <div className={styles.hero__actions}>
+              <Button
+                variant="outline"
+                size="xSmall"
+                href="https://www.linkedin.com/in/asundiev"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </Button>
+              <Button
+                variant="filled"
+                size="xSmall"
+                showArrow
+                href="https://www.udrop.com/file/Oxm2/Andrei-Sundiev_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download CV
+              </Button>
+            </div>
           </div>
-          <div className={styles.hero__actions}>
-            <Button
-              variant="outline"
-              size="xSmall"
-              href="https://www.linkedin.com/in/asundiev"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </Button>
-            <Button
-              variant="outline"
-              size="xSmall"
-              showArrow
-              href="https://www.udrop.com/file/Oxm2/Andrei-Sundiev_CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Download CV
-            </Button>
-          </div>
+          <aside className={styles.hero__panel}>
+            <div className={styles.hero__portrait}>
+              <Image
+                src={imagePaths.portrait}
+                alt="Andrey Sundiev"
+                width={600}
+                height={600}
+                className={styles.hero__portraitImage}
+                style={{ objectFit: 'cover' }}
+              />
+              <span className={styles.hero__portraitCap}>profile-photo.jpg</span>
+            </div>
+            <div className={styles.hero__spec}>
+              <div className={styles.hero__specHead}>// profile.spec</div>
+              <dl className={styles.hero__specList}>
+                <dt>focus</dt><dd>Design leadership · AI</dd>
+                <dt>tenure</dt><dd>13+ yrs in product design</dd>
+                <dt>contact</dt><dd>inbox@asundiev.com</dd>
+              </dl>
+            </div>
+          </aside>
         </div>
       </section>
 

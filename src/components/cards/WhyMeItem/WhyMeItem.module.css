@@ -61,7 +61,7 @@
 }
 
 .whyMeItem__index::before {
-  content: "/";
+  content: counter(whyme, decimal-leading-zero) "/";
 }
 
 .whyMeItem__title {

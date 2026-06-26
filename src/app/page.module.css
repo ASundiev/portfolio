@@ -430,12 +430,46 @@
   }
 
   .rail {
-    height: 48vh;
+    height: auto;
+    gap: var(--spacing-16);
   }
 
-  /* No hover on touch — hide the overlay title (full titles live on the Work page) */
+  .rail__item {
+    width: min(80vw, 420px);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background: none;
+  }
+
+  .rail__item + .rail__item {
+    margin-left: 0;
+  }
+
+  .rail__media {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  /* No hover on touch — show title + tag as a caption below each card */
   .rail__title {
-    display: none;
+    display: block;
+    position: static;
+    opacity: 1;
+    transform: none;
+    background: none;
+    padding: var(--spacing-12) 0 0;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  .rail__tag {
+    position: static;
+    background: none;
+    padding: var(--spacing-4) 0 0;
+    color: var(--color-ink-60);
   }
 
   .landing__bottom {

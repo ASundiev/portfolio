@@ -3,8 +3,6 @@
 import React, { useState } from 'react';
 import { List, X } from 'phosphor-react';
 import styles from './NavBar.module.css';
-import { Badge } from '@/components/ui/Badge';
-import { Button } from '@/components/ui/Button';
 import { withBasePath } from '@/utils/basePath';
 
 export interface NavBarProps {
@@ -28,28 +26,10 @@ export const NavBar: React.FC<NavBarProps> = ({ className = '' }) => {
   return (
     <nav className={navClasses}>
       <div className={styles.navBar__container}>
-        <div className={styles.navBar__social}>
-          <Badge variant="default">
-            <a
-              href="https://www.linkedin.com/in/asundiev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.navBar__link}
-            >
-              LinkedIn
-            </a>
-          </Badge>
-          <Badge variant="default">
-            <a
-              href="https://www.udrop.com/file/Oxm2/Andrei-Sundiev_CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.navBar__link}
-            >
-              Download CV
-            </a>
-          </Badge>
-        </div>
+        <a href={withBasePath('/')} className={styles.navBar__identity}>
+          <span className={styles.navBar__name}>Andrey Sundiev</span>
+          <span className={styles.navBar__role}>Design Director — Foundations, DevRev</span>
+        </a>
 
         {/* Desktop Menu */}
         <div className={styles.navBar__menu}>
@@ -103,4 +83,3 @@ export const NavBar: React.FC<NavBarProps> = ({ className = '' }) => {
     </nav>
   );
 };
-

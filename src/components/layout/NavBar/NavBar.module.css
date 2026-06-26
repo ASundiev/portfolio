@@ -36,17 +36,18 @@
 }
 
 .navBar__menuItem {
-  font-family: var(--font-mono);
+  font-family: var(--font-grotesk);
   font-size: 12px;
-  font-weight: 400;
-  line-height: 26px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   color: var(--color-ink-60);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .navBar__menuItem:hover {
-  color: var(--color-accent);
+  color: var(--color-ink);
 }
 
 .navBar__mobileToggle {
@@ -74,36 +75,6 @@
   color: var(--color-black-700);
   text-decoration: none;
   padding: var(--spacing-8) 0;
-}
-
-/* Dark variant for Portfolio page */
-/* Background is now controlled by the page-specific CSS for glassmorphism effect */
-
-.navBar--dark .navBar__menuItem,
-.navBar[class*="portfolio"] .navBar__menuItem {
-  color: var(--color-white);
-}
-
-.navBar--dark .navBar__mobileToggle,
-.navBar[class*="portfolio"] .navBar__mobileToggle {
-  color: var(--color-white);
-}
-
-.navBar--dark .navBar__social :global(.badge),
-.navBar[class*="portfolio"] .navBar__social :global(.badge) {
-  border-color: var(--color-white) !important;
-  color: var(--color-white) !important;
-}
-
-.navBar--dark .navBar__mobileMenu,
-.navBar[class*="portfolio"] .navBar__mobileMenu {
-  background: var(--color-black-700);
-  border-top-color: rgba(255, 255, 255, 0.2);
-}
-
-.navBar--dark .navBar__mobileMenuItem,
-.navBar[class*="portfolio"] .navBar__mobileMenuItem {
-  color: var(--color-white);
 }
 
 /* Responsive */

@@ -14,7 +14,7 @@ export default function Projects() {
                 <div className={styles.projects__content}>
                     <SectionHeader
                         title="Personal projects"
-                        alignment="center"
+                        alignment="left"
                         size="big"
                         className={styles.projects__header}
                     />

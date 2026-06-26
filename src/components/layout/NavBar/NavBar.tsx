@@ -29,7 +29,7 @@ export const NavBar: React.FC<NavBarProps> = ({ className = '' }) => {
     <nav className={navClasses}>
       <div className={styles.navBar__container}>
         <div className={styles.navBar__social}>
-          <Badge variant={className?.includes('portfolio') ? 'light' : 'dark'}>
+          <Badge variant="default">
             <a
               href="https://www.linkedin.com/in/asundiev"
               target="_blank"
@@ -39,7 +39,7 @@ export const NavBar: React.FC<NavBarProps> = ({ className = '' }) => {
               LinkedIn
             </a>
           </Badge>
-          <Badge variant={className?.includes('portfolio') ? 'light' : 'dark'}>
+          <Badge variant="default">
             <a
               href="https://www.udrop.com/file/Oxm2/Andrei-Sundiev_CV.pdf"
               target="_blank"
@@ -53,20 +53,20 @@ export const NavBar: React.FC<NavBarProps> = ({ className = '' }) => {
 
         {/* Desktop Menu */}
         <div className={styles.navBar__menu}>
-          <a href={withBasePath('/')} className={styles.navBar__menuItem}>
-            /home
-          </a>
           <a href={withBasePath('/portfolio')} className={styles.navBar__menuItem}>
-            /work
+            Work
           </a>
-          <a href={withBasePath('/projects')} className={styles.navBar__menuItem}>
-            /projects
+          <a href={withBasePath('/#why-me')} className={styles.navBar__menuItem}>
+            Why me
           </a>
           <a href={withBasePath('/#experience')} className={styles.navBar__menuItem}>
-            /experience
+            Experience
           </a>
           <a href={withBasePath('/#articles')} className={styles.navBar__menuItem}>
-            /articles-and-talks
+            Articles
+          </a>
+          <a href={withBasePath('/projects')} className={styles.navBar__menuItem}>
+            Projects
           </a>
         </div>
 
@@ -83,20 +83,20 @@ export const NavBar: React.FC<NavBarProps> = ({ className = '' }) => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className={styles.navBar__mobileMenu}>
-          <a href={withBasePath('/')} className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
-            Home
-          </a>
           <a href={withBasePath('/portfolio')} className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
             Work
           </a>
-          <a href={withBasePath('/projects')} className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
-            Projects
+          <a href={withBasePath('/#why-me')} className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
+            Why me
           </a>
           <a href={withBasePath('/#experience')} className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
             Experience
           </a>
           <a href={withBasePath('/#articles')} className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
-            Articles & talks
+            Articles
+          </a>
+          <a href={withBasePath('/projects')} className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
+            Projects
           </a>
         </div>
       )}

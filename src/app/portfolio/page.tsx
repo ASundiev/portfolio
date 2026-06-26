@@ -14,9 +14,9 @@ export default function Portfolio() {
         <div className={styles.portfolio__content}>
           <SectionHeader
             title="Work"
-            alignment="center"
+            alignment="left"
             size="big"
-            className={`${styles.portfolio__header} sectionHeader--dark`}
+            className={styles.portfolio__header}
           />
           <div className={styles.portfolio__cards}>
             <PortfolioCard
@@ -25,7 +25,6 @@ export default function Portfolio() {
               imageUrl={imagePaths.portfolio['1']}
               href="https://pitch.com/v/spearheading-the-ai-first-design-transformation-gsqedn"
               variant="style05"
-              theme="dark"
             />
             <PortfolioCard
               title="Setting up the design team for success and achieving 2x increase in productivity"
@@ -33,7 +32,6 @@ export default function Portfolio() {
               imageUrl={imagePaths.portfolio['2']}
               href="https://pitch.com/v/marketing-design-mwtw93"
               variant="style05"
-              theme="dark"
             />
             <PortfolioCard
               title="Facilitating consistent design process and smooth handover"
@@ -41,7 +39,6 @@ export default function Portfolio() {
               imageUrl={imagePaths.portfolio['5']}
               href="https://pitch.com/v/designer-enablement-dc69ey"
               variant="style05"
-              theme="dark"
             />
             <PortfolioCard
               title="Supporting the company's strategic goals and saving over £5m with a robust design system"
@@ -49,7 +46,6 @@ export default function Portfolio() {
               imageUrl={imagePaths.portfolio['3']}
               href="https://pitch.com/v/design-system-k92yxp"
               variant="style05"
-              theme="dark"
             />
             <PortfolioCard
               title="Defining design direction for Beamery products and unblocking design system in a rapid design sprint"
@@ -57,7 +53,6 @@ export default function Portfolio() {
               imageUrl={imagePaths.portfolio['4']}
               href="https://pitch.com/v/design-direction-s7mkjy"
               variant="style05"
-              theme="dark"
             />
             <PortfolioCard
               title="Increasing the user engagement and gaining high adoption with Custom Reporting at Intercom"
@@ -65,7 +60,6 @@ export default function Portfolio() {
               imageUrl={imagePaths.portfolio['6']}
               href="https://pitch.com/v/custom-reporting-4qmvuw"
               variant="style05"
-              theme="dark"
             />
           </div>
         </div>

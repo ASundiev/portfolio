@@ -74,8 +74,9 @@
 }
 
 @media (max-width: 768px) {
+  /* Match the MobileMenu overlay padding so the identity block doesn't jump */
   .navBar__container {
-    padding: var(--spacing-19) var(--spacing-24);
+    padding: var(--spacing-24) var(--spacing-16);
   }
 
   .navBar__menu {

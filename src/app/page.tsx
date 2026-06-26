@@ -184,10 +184,10 @@ export default function Home() {
                   aria-label={`${p.title} — view case study`}
                 >
                   <RailMedia src={p.src} alt={p.title} />
+                  <span className={styles.rail__title}>{p.title} ↗</span>
                   <span className={styles.rail__tag}>
-                    {String((i % projects.length) + 1).padStart(2, '0')} — {p.year}
+                    {p.year} — {p.role}
                   </span>
-                  <span className={styles.rail__view}>View case study ↗</span>
                 </a>
               ))}
             </div>

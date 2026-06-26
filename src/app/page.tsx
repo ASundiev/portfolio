@@ -322,7 +322,7 @@ export default function Home() {
               title="Design Director"
               company="Beamery"
               period="2021 — 2026"
-              defaultOpen={true}
+              defaultOpen={false}
               description="Led Product Design and Marketing Design functions. Spearheaded the AI-first transformation of the EPD department. Developed and propagated Product & Design strategy as a part of the Senior Leadership Team."
               achievements={[
                 "Inspired an active phase of work on the company's flagship conversational AI product.",
@@ -336,7 +336,7 @@ export default function Home() {
               title="Product Designer"
               company="Intercom"
               period="2018 — 2021"
-              defaultOpen={true}
+              defaultOpen={false}
               description="Drove the development of the design system, and brought it to high maturity and adoption with 50+ components, internal Figma plugins, and a Mac app."
               achievements={[
                 <><strong>Saved 40+ engineering days</strong> and achieved <strong>100% designer engagement</strong> during the pilot launch by transitioning the design system to a federated model.</>,

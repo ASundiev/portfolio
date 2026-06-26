@@ -433,6 +433,7 @@
 
   .rail {
     height: auto;
+    align-items: flex-start;
     gap: var(--spacing-16);
   }
 

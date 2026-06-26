@@ -13,6 +13,7 @@ import { WhyMeItem } from '@/components/cards/WhyMeItem';
 import { ExperienceIcon } from '@/components/ui/ExperienceIcon';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { imagePaths } from '@/data/images';
+import heroPortrait from '@/imports/DSC00131_Large_1.jpg';
 import { withBasePath } from '@/utils/basePath';
 import styles from './page.module.css';
 
@@ -67,7 +68,7 @@ export default function Home() {
           <aside className={styles.hero__panel}>
             <div className={styles.hero__portrait}>
               <Image
-                src={imagePaths.portrait}
+                src={heroPortrait}
                 alt="Andrey Sundiev"
                 width={600}
                 height={600}

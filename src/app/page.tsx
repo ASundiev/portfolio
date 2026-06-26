@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import { List, X } from 'phosphor-react';
 import { Footer } from '@/components/layout/Footer';
 import { Button } from '@/components/ui/Button';
 import { SectionHeader } from '@/components/ui/SectionHeader';
@@ -83,6 +84,7 @@ function RailMedia({ src, alt }: { src: string; alt: string }) {
 
 export default function Home() {
   const [openWhyMeIndex, setOpenWhyMeIndex] = useState<number | null>(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [whyMeRef, isWhyMeVisible] = useIntersectionObserver({ threshold: 0.2 });
 
   const handleWhyMeToggle = (index: number) => {
@@ -164,7 +166,25 @@ export default function Home() {
               <a href="#articles">Articles</a>
               <a href={withBasePath('/projects')}>Projects</a>
             </nav>
+            <button
+              className={styles.landing__menuToggle}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+              aria-expanded={isMenuOpen}
+            >
+              {isMenuOpen ? <X size={24} /> : <List size={24} />}
+            </button>
           </div>
+
+          {isMenuOpen && (
+            <div className={styles.landing__mobileMenu}>
+              <a href={withBasePath('/portfolio')} onClick={() => setIsMenuOpen(false)}>Work</a>
+              <a href="#why-me" onClick={() => setIsMenuOpen(false)}>Why me</a>
+              <a href="#experience" onClick={() => setIsMenuOpen(false)}>Experience</a>
+              <a href="#articles" onClick={() => setIsMenuOpen(false)}>Articles</a>
+              <a href={withBasePath('/projects')} onClick={() => setIsMenuOpen(false)}>Projects</a>
+            </div>
+          )}
 
           {/* Rail */}
           <div className={styles.landing__railWrap} ref={railWrapRef}>

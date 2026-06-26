@@ -102,7 +102,7 @@ export default function Home() {
                 className={styles.hero__portraitImage}
                 style={{ objectFit: 'cover' }}
               />
-              <span className={styles.hero__portraitCap}>profile-photo.jpg</span>
+
             </div>
             <div className={styles.hero__spec}>
               <dl className={styles.hero__specList}>

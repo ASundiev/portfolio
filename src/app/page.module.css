@@ -194,7 +194,7 @@
 }
 
 .hero__spec {
-  padding: var(--spacing-19);
+  padding: 24px 20px;
 }
 
 .hero__specHead {
@@ -218,12 +218,14 @@
   color: var(--color-ink-30);
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  font-size: 10.5px;
+  font-size: 10px;
+  width: 48px;
 }
 
 .hero__specList dd {
   color: var(--color-ink);
   font-weight: 500;
+  font-size: 11px;
 }
 
 /* Why Me Section */

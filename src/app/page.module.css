@@ -410,7 +410,7 @@
     min-height: 100vh;
     min-height: 100dvh; /* fill the visible viewport, accounting for mobile browser chrome */
     justify-content: space-between;
-    padding: var(--spacing-24) var(--spacing-16);
+    padding: 20px;
     gap: var(--spacing-32);
   }
 
@@ -500,15 +500,15 @@
   }
 
   .whyMe {
-    padding: var(--spacing-40) var(--spacing-24);
+    padding: 48px 20px;
   }
 
   .experience {
-    padding: var(--spacing-56) var(--spacing-24);
+    padding: 48px 20px;
   }
 
   .articles {
-    padding: 0 var(--spacing-24) var(--spacing-56);
+    padding: 48px 20px;
   }
 }
 
@@ -522,13 +522,5 @@
 
   .landing__nav {
     display: none;
-  }
-
-  .whyMe {
-    padding: var(--spacing-40) var(--spacing-16);
-  }
-
-  .experience {
-    padding: var(--spacing-40) var(--spacing-16);
   }
 }

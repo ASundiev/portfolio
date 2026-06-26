@@ -45,8 +45,9 @@
 }
 
 .experienceItem__role {
-  font-size: 21px;
-  font-weight: 600;
+  font-family: var(--font-grotesk);
+  font-size: 20px;
+  font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--color-ink);
 }
@@ -123,7 +124,22 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .experienceItem__header {
+    grid-template-columns: 1fr auto;
+    row-gap: var(--spacing-4);
+  }
+
+  /* Year drops to its own line above the role */
+  .experienceItem__period {
+    grid-column: 1 / -1;
+    padding-right: 0;
+  }
+
   .experienceItem__role {
     font-size: 18px;
+  }
+
+  .experienceItem__details {
+    padding-left: 0;
   }
 }

@@ -5,29 +5,20 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background: var(--color-black-700);
+  background: var(--color-paper);
   min-height: 100vh;
 }
 
+/* Header scrolls with the page, like the homepage corner chrome */
 .portfolio__nav {
-  background: rgba(40, 40, 40, 0.6);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
 }
 
 .portfolio__grid {
-  background: var(--color-black-700);
+  background: var(--color-paper);
   width: 100%;
-  padding: var(--spacing-80) var(--spacing-80);
-  padding-top: calc(var(--spacing-80) + 90px); /* Add top padding to account for fixed navbar */
+  padding: var(--spacing-40) var(--spacing-40) var(--spacing-104);
   display: flex;
-  gap: var(--spacing-8);
   align-items: flex-start;
   justify-content: center;
 }
@@ -35,42 +26,39 @@
 .portfolio__content {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-48);
+  gap: var(--spacing-32);
   width: 100%;
   max-width: 1280px;
-  align-items: center;
+  align-items: flex-start;
 }
 
-.portfolio__header {
-  color: var(--color-white);
-}
-
-.portfolio__header :global(.sectionHeader__title) {
-  color: var(--color-white);
+/* Page title matches homepage section titles */
+.portfolio__header h2 {
+  font-size: 32px !important;
+  line-height: 1.05;
 }
 
 .portfolio__cards {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-32);
+  gap: var(--spacing-56);
   width: 100%;
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
   .portfolio__grid {
-    padding: var(--spacing-56) var(--spacing-24);
+    padding: var(--spacing-40) var(--spacing-24) var(--spacing-80);
   }
 
   .portfolio__cards {
-    gap: var(--spacing-16);
+    gap: var(--spacing-40);
   }
 }
 
 @media (max-width: 768px) {
   .portfolio__grid {
-    padding: var(--spacing-56) var(--spacing-16);
-    padding-top: calc(var(--spacing-56) + 50px); /* Add top padding for navbar */
+    padding: var(--spacing-32) var(--spacing-16) var(--spacing-56);
   }
 
   .portfolio__content {
@@ -78,11 +66,6 @@
   }
 
   .portfolio__cards {
-    gap: var(--spacing-16);
-  }
-
-  .portfolio__cards > *:first-child {
-    margin-top: 0;
+    gap: var(--spacing-32);
   }
 }
-

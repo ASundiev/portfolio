@@ -2,7 +2,7 @@
 
 .footer {
   background: var(--color-ink);
-  padding: var(--spacing-104) var(--spacing-80);
+  padding: var(--spacing-104) 20px;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -43,11 +43,11 @@
 }
 
 .footer__email {
-  font-family: var(--font-display);
-  font-size: 72px;
-  font-weight: 600;
+  font-family: var(--font-grotesk);
+  font-size: clamp(40px, 5vw, 72px);
+  font-weight: 800;
   line-height: 0.95;
-  letter-spacing: -3px;
+  letter-spacing: -0.03em;
   color: var(--color-white);
   margin: 0;
 }
@@ -65,20 +65,21 @@
 
 .footer__menu {
   display: flex;
-  gap: var(--spacing-32);
-  align-items: flex-start;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
 }
 
 .footer__menuItem {
-  font-family: var(--font-mono);
+  font-family: var(--font-grotesk);
   font-size: 12px;
-  font-weight: 400;
-  line-height: 26px;
-  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   transition: color 0.2s ease;
-  white-space: nowrap; /* Prevent "Articles & talks" from wrapping */
+  white-space: nowrap;
 }
 
 .footer__menuItem:hover {
@@ -88,7 +89,7 @@
 /* Responsive */
 @media (max-width: 1024px) {
   .footer {
-    padding: var(--spacing-40) var(--spacing-24);
+    padding: 64px 20px;
   }
 
   .footer__container {
@@ -109,15 +110,12 @@
 
   .footer__menu {
     flex-direction: column;
+    align-items: flex-start;
     gap: var(--spacing-16);
   }
 }
 
 @media (max-width: 768px) {
-  .footer {
-    padding: var(--spacing-40) var(--spacing-16);
-  }
-
   .footer__email {
     font-size: 32px;
     line-height: 40px;

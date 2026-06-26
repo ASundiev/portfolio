@@ -1,23 +1,15 @@
 'use client';
 
-import React, { useState } from 'react';
-import { List, X } from 'phosphor-react';
+import React from 'react';
 import styles from './NavBar.module.css';
-import { Badge } from '@/components/ui/Badge';
-import { Button } from '@/components/ui/Button';
 import { withBasePath } from '@/utils/basePath';
+import { MobileMenu } from '@/components/layout/MobileMenu';
 
 export interface NavBarProps {
   className?: string;
 }
 
 export const NavBar: React.FC<NavBarProps> = ({ className = '' }) => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
   const navClasses = [
     styles.navBar,
     className,
@@ -28,79 +20,33 @@ export const NavBar: React.FC<NavBarProps> = ({ className = '' }) => {
   return (
     <nav className={navClasses}>
       <div className={styles.navBar__container}>
-        <div className={styles.navBar__social}>
-          <Badge variant={className?.includes('portfolio') ? 'light' : 'dark'}>
-            <a
-              href="https://www.linkedin.com/in/asundiev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.navBar__link}
-            >
-              LinkedIn
-            </a>
-          </Badge>
-          <Badge variant={className?.includes('portfolio') ? 'light' : 'dark'}>
-            <a
-              href="https://www.udrop.com/file/Oxm2/Andrei-Sundiev_CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.navBar__link}
-            >
-              Download CV
-            </a>
-          </Badge>
-        </div>
+        <a href={withBasePath('/')} className={styles.navBar__identity}>
+          <span className={styles.navBar__name}>Andrey Sundiev</span>
+          <span className={styles.navBar__role}>Design Director — Foundations, DevRev</span>
+        </a>
 
         {/* Desktop Menu */}
         <div className={styles.navBar__menu}>
-          <a href={withBasePath('/')} className={styles.navBar__menuItem}>
-            /home
-          </a>
           <a href={withBasePath('/portfolio')} className={styles.navBar__menuItem}>
-            /work
-          </a>
-          <a href={withBasePath('/projects')} className={styles.navBar__menuItem}>
-            /projects
-          </a>
-          <a href={withBasePath('/#experience')} className={styles.navBar__menuItem}>
-            /experience
-          </a>
-          <a href={withBasePath('/#articles')} className={styles.navBar__menuItem}>
-            /articles-and-talks
-          </a>
-        </div>
-
-        {/* Mobile Menu Toggle */}
-        <button
-          className={styles.navBar__mobileToggle}
-          onClick={toggleMobileMenu}
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <List size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className={styles.navBar__mobileMenu}>
-          <a href={withBasePath('/')} className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
-            Home
-          </a>
-          <a href={withBasePath('/portfolio')} className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
             Work
           </a>
-          <a href={withBasePath('/projects')} className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
-            Projects
+          <a href={withBasePath('/#why-me')} className={styles.navBar__menuItem}>
+            Why me
           </a>
-          <a href={withBasePath('/#experience')} className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
+          <a href={withBasePath('/#experience')} className={styles.navBar__menuItem}>
             Experience
           </a>
-          <a href={withBasePath('/#articles')} className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
-            Articles & talks
+          <a href={withBasePath('/#articles')} className={styles.navBar__menuItem}>
+            Articles
+          </a>
+          <a href={withBasePath('/projects')} className={styles.navBar__menuItem}>
+            Projects
           </a>
         </div>
-      )}
+
+        {/* Mobile Menu (shared component) */}
+        <MobileMenu />
+      </div>
     </nav>
   );
 };
-

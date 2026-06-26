@@ -44,17 +44,20 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
           </div>
         </div>
         <div className={styles.footer__menu}>
-          <a href={withBasePath('/')} className={styles.footer__menuItem}>
-            /home
-          </a>
           <a href={withBasePath('/portfolio')} className={styles.footer__menuItem}>
-            /work
+            Work
+          </a>
+          <a href={withBasePath('/#why-me')} className={styles.footer__menuItem}>
+            Why me
           </a>
           <a href={withBasePath('/#experience')} className={styles.footer__menuItem}>
-            /experience
+            Experience
           </a>
           <a href={withBasePath('/#articles')} className={styles.footer__menuItem}>
-            /articles-and-talks
+            Articles
+          </a>
+          <a href={withBasePath('/projects')} className={styles.footer__menuItem}>
+            Projects
           </a>
         </div>
       </div>

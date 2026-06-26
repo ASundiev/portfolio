@@ -340,7 +340,7 @@ export default function Home() {
         <div className={styles.articles__content}>
           <SectionHeader
             title="Articles & talks"
-            alignment="center"
+            alignment="left"
             size="big"
             className={styles.articles__header}
           />

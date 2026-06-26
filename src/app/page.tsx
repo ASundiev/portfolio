@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { NavBar } from '@/components/layout/NavBar';
 import { Footer } from '@/components/layout/Footer';
@@ -13,6 +13,7 @@ import { WhyMeItem } from '@/components/cards/WhyMeItem';
 import { ExperienceIcon } from '@/components/ui/ExperienceIcon';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { imagePaths } from '@/data/images';
+import heroPortrait from '@/imports/DSC00131_Large_1.jpg';
 import { withBasePath } from '@/utils/basePath';
 import styles from './page.module.css';
 
@@ -24,8 +25,29 @@ export default function Home() {
     setOpenWhyMeIndex(openWhyMeIndex === index ? null : index);
   };
 
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const el = document.documentElement;
+      const max = el.scrollHeight - el.clientHeight;
+      setScrollProgress(max > 0 ? el.scrollTop / max : 0);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <div className={styles.homepage}>
+      {/* Scroll progress hairline */}
+      <div
+        className={styles.scrollProgress}
+        style={{ transform: `scaleX(${scrollProgress})` }}
+        aria-hidden="true"
+      />
+
+
       {/* Navigation - Outside hero for sticky behavior */}
       <NavBar className={styles.homepage__nav} />
 
@@ -33,48 +55,60 @@ export default function Home() {
       <section className={styles.hero}>
         <div className={styles.hero__container}>
           <div className={styles.hero__content}>
-            <div className={styles.hero__title}>
-              <div className={styles.hero__nameLine}>
-                <h1 className={styles.hero__firstName}>Andrey</h1>
-                <div className={styles.hero__avatar}>
-                  <Image
-                    src={imagePaths.profile}
-                    alt="Andrey Sundiev"
-                    width={80}
-                    height={80}
-                    className={styles.hero__avatarImage}
-                    style={{ objectFit: 'cover' }}
-                  />
-                </div>
-                <h1 className={styles.hero__lastName}>Sundiev</h1>
-              </div>
-              <h2 className={styles.hero__subtitle}>Design leader</h2>
-            </div>
+            <span className={styles.hero__kicker}>
+              <span className={styles.tk}>//</span> design director · foundations, devrev
+            </span>
+            <h1 className={styles.hero__name}>
+              Andrey<br />Sundiev
+            </h1>
             <p className={styles.hero__description}>
-              I've been leading teams and driving change at organisations of various scale for over 12 years. Currently leading Foundations at DevRev.
+              I make design a force multiplier: design systems that cut cost, teams that ship, and an AI-first practice that keeps both moving.
             </p>
+            <div className={styles.hero__actions}>
+              <Button
+                variant="outline"
+                size="xSmall"
+                href="https://www.linkedin.com/in/asundiev"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </Button>
+              <Button
+                variant="filled"
+                size="xSmall"
+                showArrow
+                href="https://www.udrop.com/file/Oxm2/Andrei-Sundiev_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download CV
+              </Button>
+            </div>
           </div>
-          <div className={styles.hero__actions}>
-            <Button
-              variant="outline"
-              size="xSmall"
-              href="https://www.linkedin.com/in/asundiev"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </Button>
-            <Button
-              variant="outline"
-              size="xSmall"
-              showArrow
-              href="https://www.udrop.com/file/Oxm2/Andrei-Sundiev_CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Download CV
-            </Button>
-          </div>
+          <aside className={styles.hero__panel}>
+            <div className={styles.hero__portrait}>
+              <Image
+                src={heroPortrait}
+                alt="Andrey Sundiev"
+                width={600}
+                height={600}
+                className={styles.hero__portraitImage}
+                style={{ objectFit: 'cover' }}
+              />
+
+            </div>
+            <div className={styles.hero__spec}>
+              <dl className={styles.hero__specList}>
+                <dt>focus</dt>
+                <dd>Design leadership · AI</dd>
+                <dt>tenure</dt>
+                <dd>13+ yrs in product design</dd>
+                <dt>contact</dt>
+                <dd>inbox@asundiev.com</dd>
+              </dl>
+            </div>
+          </aside>
         </div>
       </section>
 
@@ -171,11 +205,13 @@ export default function Home() {
       {/* Experience Section */}
       <section className={styles.experience} id="experience">
         <div className={styles.experience__content}>
-          <div className={styles.experience__grid}>
-            <div className={styles.experience__title}>
-              <span className={styles.experience__label}>E X P E R I E N C E</span>
-            </div>
-            <div className={styles.experience__list}>
+          <SectionHeader
+            title="Experience"
+            alignment="left"
+            size="big"
+            className={styles.experience__header}
+          />
+          <div className={styles.experience__list}>
               <ExperienceItem
                 title="Design Director"
                 company="DevRev"
@@ -230,7 +266,6 @@ export default function Home() {
                 interactive={false}
                 hideIcon
               />
-            </div>
           </div>
           <Button
             variant="filled"

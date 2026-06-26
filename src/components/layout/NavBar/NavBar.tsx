@@ -54,19 +54,19 @@ export const NavBar: React.FC<NavBarProps> = ({ className = '' }) => {
         {/* Desktop Menu */}
         <div className={styles.navBar__menu}>
           <a href={withBasePath('/')} className={styles.navBar__menuItem}>
-            Home
+            /home
           </a>
           <a href={withBasePath('/portfolio')} className={styles.navBar__menuItem}>
-            Work
+            /work
           </a>
           <a href={withBasePath('/projects')} className={styles.navBar__menuItem}>
-            Projects
+            /projects
           </a>
           <a href={withBasePath('/#experience')} className={styles.navBar__menuItem}>
-            Experience
+            /experience
           </a>
           <a href={withBasePath('/#articles')} className={styles.navBar__menuItem}>
-            Articles & talks
+            /articles-and-talks
           </a>
         </div>
 

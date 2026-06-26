@@ -2,18 +2,32 @@
  * Global styles with design token integration
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=Martian+Mono:wght@300;400;500;600&display=swap');
 
 :root {
-  /* Color tokens */
-  --color-black-900: #000000;
-  --color-black-700: #282828;
-  --color-black-500: #4B4B4B;
-  --color-black-300: #BDBDBD;
+  /* Type system (agent-native) */
+  --font-display: 'Bricolage Grotesque', sans-serif;
+  --font-body: 'Hanken Grotesk', sans-serif;
+  --font-mono: 'Martian Mono', monospace;
+
+  /* Color tokens — retargeted to the agent-native palette.
+     Names kept so existing components inherit; values flipped to ink/paper/cobalt. */
+  --color-black-900: #0A0A0A;
+  --color-black-700: #0A0A0A;
+  --color-black-500: #585854;
+  --color-black-300: #D9D9D5;
   --color-white: #FFFFFF;
-  --color-orange-300: #FEA75F;
-  --color-brand: #FFF0E3;
+  --color-orange-300: #1D4ED8;   /* accent → cobalt */
+  --color-brand: #FBFBFA;        /* brand bg → paper */
   --color-transparent: #FFFFFF;
+
+  /* Semantic aliases */
+  --color-paper: #FBFBFA;
+  --color-ink: #0A0A0A;
+  --color-ink-60: #585854;
+  --color-ink-30: #9C9C97;
+  --color-line: #0A0A0A14;
+  --color-accent: #1D4ED8;
 
   /* Spacing tokens */
   --spacing-4: 4px;
@@ -34,13 +48,13 @@
   --spacing-160: 160px;
   --spacing-240: 240px;
 
-  /* Border radius tokens */
-  --radius-24: 24px;
-  --radius-31: 31px;
-  --radius-39: 39px;
-  --radius-40: 40px;
-  --radius-50: 50px;
-  --radius-100: 100px;
+  /* Border radius tokens — sharpened for the editorial/agent-native look */
+  --radius-24: 2px;
+  --radius-31: 2px;
+  --radius-39: 2px;
+  --radius-40: 2px;
+  --radius-50: 2px;
+  --radius-100: 2px;
 }
 
 * {
@@ -57,14 +71,14 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  color: var(--color-black-700);
-  background: var(--color-white);
+  color: var(--color-ink);
+  background: var(--color-paper);
 }
 
 a {

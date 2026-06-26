@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Direction B — Warm Quiet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#F5F1EA;
+    --paper-card:#EFE9DF;
+    --ink:#1A1714;
+    --ink-60:#6E665C;
+    --ink-30:#A99F90;
+    --line:#1A171419;
+    --terra:#B25C3E;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Hanken Grotesk',sans-serif;
+    background:var(--paper);color:var(--ink);
+    -webkit-font-smoothing:antialiased;line-height:1.5;
+  }
+  .serif{font-family:'Fraunces',serif}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 48px}
+  a{color:inherit;text-decoration:none}
+  .label{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-60)}
+
+  nav{display:flex;align-items:center;justify-content:space-between;padding:32px 48px;max-width:1140px;margin:0 auto}
+  nav .brand{font-family:'Fraunces',serif;font-weight:500;font-size:20px;letter-spacing:-.01em}
+  nav .links{display:flex;gap:30px}
+  nav .links a{font-size:14px;font-weight:500;color:var(--ink-60);transition:color .2s}
+  nav .links a:hover{color:var(--terra)}
+
+  /* HERO two-column */
+  .hero{display:grid;grid-template-columns:1.4fr .85fr;gap:56px;align-items:center;padding:72px 0 88px}
+  .hero h1{font-family:'Fraunces',serif;font-size:clamp(56px,7.5vw,104px);font-weight:400;line-height:.98;letter-spacing:-.02em}
+  .hero h1 em{font-style:italic;color:var(--terra);font-weight:400}
+  .hero .sub{font-family:'Fraunces',serif;font-style:italic;font-size:26px;color:var(--ink-60);margin-top:18px}
+  .hero .desc{max-width:480px;font-size:18px;line-height:1.6;margin-top:32px;color:var(--ink)}
+  .hero .actions{display:flex;gap:26px;margin-top:36px;align-items:center}
+  .hero .actions a{font-size:15px;font-weight:600;border-bottom:1.5px solid var(--ink);padding-bottom:3px}
+  .hero .actions a.alt{color:var(--terra);border-color:var(--terra)}
+  .hero .portrait{position:relative}
+  .hero .portrait img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:2px;filter:grayscale(.15) contrast(1.02)}
+  .hero .portrait .cap{position:absolute;bottom:-14px;left:-14px;background:var(--paper);padding:8px 14px;font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:var(--ink-60)}
+
+  .sec{padding:72px 0;border-top:1px solid var(--line)}
+  .sechead{margin-bottom:44px}
+  .sechead h2{font-family:'Fraunces',serif;font-weight:400;font-size:40px;letter-spacing:-.01em}
+  .sechead h2 .idx{color:var(--ink-30);font-size:24px;margin-right:14px;font-style:italic}
+
+  .work{display:grid;grid-template-columns:1fr 1fr;gap:48px 40px}
+  .work .item img{width:100%;aspect-ratio:16/11;object-fit:cover;border-radius:2px}
+  .work .item .t{font-family:'Fraunces',serif;font-size:24px;font-weight:400;line-height:1.25;margin-top:18px;letter-spacing:-.01em}
+  .work .item .m{margin-top:8px}
+  .work .item a{display:inline-block;margin-top:14px;font-size:14px;font-weight:600;color:var(--terra);border-bottom:1.5px solid var(--terra);padding-bottom:2px}
+
+  .exp .row{display:grid;grid-template-columns:160px 1fr;gap:24px;padding:26px 0;border-top:1px solid var(--line);align-items:baseline}
+  .exp .row:last-child{border-bottom:1px solid var(--line)}
+  .exp .yr{font-size:14px;font-weight:600;color:var(--ink-60);letter-spacing:.02em}
+  .exp .role{font-family:'Fraunces',serif;font-size:26px;font-weight:400;letter-spacing:-.01em}
+  .exp .role span{color:var(--terra);font-style:italic}
+
+  .arts{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+  .arts .a img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:2px}
+  .arts .a .t{font-family:'Fraunces',serif;font-size:20px;font-weight:400;line-height:1.3;margin-top:14px}
+  .arts .a .tag{margin-top:10px}
+
+  footer{padding:96px 0 72px;border-top:1px solid var(--line);margin-top:24px;text-align:center}
+  footer .big{font-family:'Fraunces',serif;font-style:italic;font-size:56px;font-weight:400;letter-spacing:-.02em}
+  footer .big a{color:var(--terra)}
+  footer .label{margin-top:24px}
+</style>
+</head>
+<body>
+  <nav>
+    <div class="brand">Andrey Sundiev</div>
+    <div class="links">
+      <a href="#">Home</a><a href="#">Work</a><a href="#">Projects</a><a href="#">Experience</a><a href="#">Articles &amp; talks</a>
+    </div>
+  </nav>
+
+  <header class="hero wrap">
+    <div>
+      <h1 class="serif">Design <em>leader</em><br>&amp; team builder</h1>
+      <div class="sub">Andrey Sundiev</div>
+      <p class="desc">I've been leading teams and driving change at organisations of various scale for over 12 years. Currently leading Foundations at DevRev.</p>
+      <div class="actions">
+        <a href="#">LinkedIn</a>
+        <a class="alt" href="#">Download CV ↗</a>
+      </div>
+    </div>
+    <div class="portrait">
+      <img src="/images/profile.jpg" alt="Andrey Sundiev" />
+      <span class="cap">Leading Foundations, DevRev</span>
+    </div>
+  </header>
+
+  <section class="sec wrap">
+    <div class="sechead"><h2 class="serif"><span class="idx">01</span>Selected work</h2></div>
+    <div class="work">
+      <div class="item">
+        <img src="/images/portfolio-3.png" alt="" />
+        <div class="t">Spearheading the AI-first design transformation</div>
+        <div class="m label">2025 · Design Director</div>
+        <a href="#">Read case study</a>
+      </div>
+      <div class="item">
+        <img src="/images/portfolio-6.jpg" alt="" />
+        <div class="t">Increasing engagement with Custom Reporting at Intercom</div>
+        <div class="m label">2020 · Product Designer</div>
+        <a href="#">Read case study</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec wrap exp">
+    <div class="sechead"><h2 class="serif"><span class="idx">02</span>Experience</h2></div>
+    <div class="row"><div class="yr">2026 — Current</div><div class="role serif">Design Director <span>DevRev</span></div></div>
+    <div class="row"><div class="yr">2021 — 2026</div><div class="role serif">Design Director <span>Beamery</span></div></div>
+    <div class="row"><div class="yr">2018 — 2021</div><div class="role serif">Product Designer <span>Intercom</span></div></div>
+    <div class="row"><div class="yr">2016 — 2018</div><div class="role serif">Chief Designer <span>Mail.Ru Group</span></div></div>
+    <div class="row"><div class="yr">2013 — 2016</div><div class="role serif">Product Design Lead <span>Yandex</span></div></div>
+  </section>
+
+  <section class="sec wrap">
+    <div class="sechead"><h2 class="serif"><span class="idx">03</span>Articles &amp; talks</h2></div>
+    <div class="arts">
+      <div class="a"><img src="/images/article-8.jpg" alt="" /><div class="t">Ready for AI: design system for the agentic era</div><div class="tag label">Webinar</div></div>
+      <div class="a"><img src="/images/article-1.jpg" alt="" /><div class="t">Inspect &amp; Reflect Wise.com's Design System</div><div class="tag label">Webinar</div></div>
+      <div class="a"><img src="/images/article-2.jpg" alt="" /><div class="t">Design Systems and the Volatile Economy</div><div class="tag label">Podcast</div></div>
+    </div>
+  </section>
+
+  <footer class="wrap">
+    <div class="big serif">Let's <a href="#">work together</a></div>
+    <div class="label">Andrey Sundiev · © 2026</div>
+  </footer>
+</body>
+</html>

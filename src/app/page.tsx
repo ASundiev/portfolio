@@ -178,11 +178,26 @@ export default function Home() {
 
           {isMenuOpen && (
             <div className={styles.landing__mobileMenu}>
-              <a href={withBasePath('/portfolio')} onClick={() => setIsMenuOpen(false)}>Work</a>
-              <a href="#why-me" onClick={() => setIsMenuOpen(false)}>Why me</a>
-              <a href="#experience" onClick={() => setIsMenuOpen(false)}>Experience</a>
-              <a href="#articles" onClick={() => setIsMenuOpen(false)}>Articles</a>
-              <a href={withBasePath('/projects')} onClick={() => setIsMenuOpen(false)}>Projects</a>
+              <div className={styles.landing__mobileMenuTop}>
+                <div className={styles.cornerLabel}>
+                  <span className={styles.cornerLabel__strong}>Andrey Sundiev</span>
+                  <span>Design Director — Foundations, DevRev</span>
+                </div>
+                <button
+                  className={styles.landing__menuToggle}
+                  onClick={() => setIsMenuOpen(false)}
+                  aria-label="Close menu"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+              <nav className={styles.landing__mobileMenuNav}>
+                <a href={withBasePath('/portfolio')} onClick={() => setIsMenuOpen(false)}>Work</a>
+                <a href="#why-me" onClick={() => setIsMenuOpen(false)}>Why me</a>
+                <a href="#experience" onClick={() => setIsMenuOpen(false)}>Experience</a>
+                <a href="#articles" onClick={() => setIsMenuOpen(false)}>Articles</a>
+                <a href={withBasePath('/projects')} onClick={() => setIsMenuOpen(false)}>Projects</a>
+              </nav>
             </div>
           )}
 

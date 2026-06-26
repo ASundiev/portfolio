@@ -158,13 +158,11 @@ export default function Home() {
               <span>Design Director — Foundations, DevRev</span>
             </div>
             <nav className={styles.landing__nav}>
+              <a href={withBasePath('/portfolio')}>Work</a>
               <a href="#why-me">Why me</a>
               <a href="#experience">Experience</a>
               <a href="#articles">Articles</a>
               <a href={withBasePath('/projects')}>Projects</a>
-              <a href={withBasePath('/portfolio')} className={styles.landing__navCta}>
-                Full portfolio ↗
-              </a>
             </nav>
           </div>
 
@@ -346,7 +344,7 @@ export default function Home() {
             size="big"
             className={styles.articles__header}
           />
-          <div className={styles.articles__grid}>
+          <div className={styles.articles__rail}>
             <ArticleCard
               title="Ready for AI: design system for the agentic era"
               description="Showcasing how we build Arcade design system with DevRev's own Agentic AI."

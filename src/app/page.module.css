@@ -373,11 +373,18 @@
   max-width: 1280px;
 }
 
-.articles__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+.articles__rail {
+  display: flex;
   gap: var(--spacing-24);
   width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding-bottom: var(--spacing-16);
+}
+
+.articles__rail > * {
+  flex: 0 0 min(440px, 80vw);
+  scroll-snap-align: start;
 }
 
 /* ============================================================
@@ -449,10 +456,6 @@
   .articles {
     padding: 0 var(--spacing-24) var(--spacing-56);
   }
-
-  .articles__grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 768px) {
@@ -462,9 +465,5 @@
 
   .experience {
     padding: var(--spacing-40) var(--spacing-16);
-  }
-
-  .articles__grid {
-    grid-template-columns: 1fr;
   }
 }

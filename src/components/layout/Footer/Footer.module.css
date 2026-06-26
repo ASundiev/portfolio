@@ -2,7 +2,7 @@
 
 .footer {
   background: var(--color-ink);
-  padding: var(--spacing-104) var(--spacing-40);
+  padding: var(--spacing-104) 20px;
   width: 100%;
   position: relative;
   overflow: hidden;

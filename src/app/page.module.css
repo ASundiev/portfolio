@@ -409,6 +409,7 @@
     height: auto;
     min-height: 100vh;
     min-height: 100dvh; /* fill the visible viewport, accounting for mobile browser chrome */
+    justify-content: space-between;
     padding: var(--spacing-24) var(--spacing-16);
     gap: var(--spacing-32);
   }
@@ -425,6 +426,7 @@
   }
 
   .landing__railWrap {
+    flex: 0 0 auto;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -434,8 +436,9 @@
     gap: var(--spacing-16);
   }
 
+  /* Vertical (portrait) cards — centre-cropped image */
   .rail__item {
-    width: min(80vw, 420px);
+    width: min(58vw, 300px);
     height: auto;
     display: flex;
     flex-direction: column;
@@ -449,8 +452,13 @@
   .rail__media {
     width: 100%;
     height: auto;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 4;
     object-fit: cover;
+    object-position: center;
+  }
+
+  .landing__hint {
+    display: none;
   }
 
   /* No hover on touch — show title + tag as a caption below each card */
@@ -463,6 +471,7 @@
     padding: var(--spacing-12) 0 0;
     font-size: 16px;
     line-height: 1.2;
+    flex-shrink: 0;
   }
 
   .rail__tag {
@@ -470,6 +479,7 @@
     background: none;
     padding: var(--spacing-4) 0 0;
     color: var(--color-ink-60);
+    flex-shrink: 0;
   }
 
   .landing__bottom {

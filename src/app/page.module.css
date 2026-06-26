@@ -481,7 +481,8 @@
   .landing__sticky {
     position: static;
     height: auto;
-    min-height: auto;
+    min-height: 100vh;
+    min-height: 100dvh; /* fill the visible viewport, accounting for mobile browser chrome */
     padding: var(--spacing-24) var(--spacing-16);
     gap: var(--spacing-32);
   }

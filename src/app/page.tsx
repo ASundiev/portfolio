@@ -47,12 +47,6 @@ export default function Home() {
         aria-hidden="true"
       />
 
-      {/* Structural column grid backdrop */}
-      <div className={styles.gridBg} aria-hidden="true">
-        <div className={styles.gridBg__inner}>
-          <span /><span /><span /><span />
-        </div>
-      </div>
 
       {/* Navigation - Outside hero for sticky behavior */}
       <NavBar className={styles.homepage__nav} />
@@ -106,9 +100,12 @@ export default function Home() {
             </div>
             <div className={styles.hero__spec}>
               <dl className={styles.hero__specList}>
-                <dt>focus</dt><dd>Design leadership · AI</dd>
-                <dt>tenure</dt><dd>13+ yrs in product design</dd>
-                <dt>contact</dt><dd>inbox@asundiev.com</dd>
+                <dt>focus</dt>
+                <dd>Design leadership · AI</dd>
+                <dt>tenure</dt>
+                <dd>13+ yrs in product design</dd>
+                <dt>contact</dt>
+                <dd>inbox@asundiev.com</dd>
               </dl>
             </div>
           </aside>

@@ -9,6 +9,7 @@ import { ArticleCard } from '@/components/cards/ArticleCard';
 import { WhyMeItem } from '@/components/cards/WhyMeItem';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { imagePaths } from '@/data/images';
+import { withBasePath } from '@/utils/basePath';
 import styles from './page.module.css';
 
 /* Project rail data — all case studies from /portfolio */
@@ -57,8 +58,8 @@ const projects = [
   },
 ];
 
-/* Soft loop — repeat the set so the rail reads as continuous, then releases to vertical */
-const railItems = [...projects, ...projects];
+/* Hero rail — a highlight of 3 featured case studies (full list lives on /portfolio) */
+const railItems = [projects[0], projects[1], projects[5]];
 
 function RailMedia({ src, alt }: { src: string; alt: string }) {
   const ext = src.split('.').pop()?.toLowerCase();
@@ -160,13 +161,9 @@ export default function Home() {
               <a href="#why-me">Why me</a>
               <a href="#experience">Experience</a>
               <a href="#articles">Articles</a>
-              <a
-                href="https://www.linkedin.com/in/asundiev"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.landing__navCta}
-              >
-                Let&apos;s talk ↗
+              <a href={withBasePath('/projects')}>Projects</a>
+              <a href={withBasePath('/portfolio')} className={styles.landing__navCta}>
+                Full portfolio ↗
               </a>
             </nav>
           </div>

@@ -66,33 +66,6 @@
   color: var(--color-ink);
 }
 
-.navBar__mobileToggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--color-black-700);
-  padding: var(--spacing-4);
-}
-
-.navBar__mobileMenu {
-  display: none;
-  flex-direction: column;
-  gap: var(--spacing-16);
-  padding: var(--spacing-24) var(--spacing-80);
-  background: var(--color-white);
-  border-top: 1px solid var(--color-black-500);
-}
-
-.navBar__mobileMenuItem {
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 26px;
-  color: var(--color-black-700);
-  text-decoration: none;
-  padding: var(--spacing-8) 0;
-}
-
 /* Responsive */
 @media (max-width: 1024px) {
   .navBar__container {
@@ -105,39 +78,8 @@
     padding: var(--spacing-19) var(--spacing-24);
   }
 
-  .navBar__social {
-    gap: 0;
-  }
-
-  /* Hide LinkedIn badge on mobile, keep Download CV */
-  .navBar__social > *:first-child {
-    display: none;
-  }
-
-  /* Mobile badge styling for Download CV */
-  .navBar__social > * {
-    padding: 4px 14px;
-  }
-
-  .navBar__social > * > * {
-    font-size: 14px;
-    line-height: 22px;
-  }
-
   .navBar__menu {
     display: none;
-  }
-
-  .navBar__mobileToggle {
-    display: block;
-  }
-
-  .navBar__mobileMenu {
-    display: flex;
-  }
-
-  .navBar__mobileMenu {
-    padding: var(--spacing-24);
   }
 }
 

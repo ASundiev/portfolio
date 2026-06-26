@@ -1,21 +1,15 @@
 'use client';
 
-import React, { useState } from 'react';
-import { List, X } from 'phosphor-react';
+import React from 'react';
 import styles from './NavBar.module.css';
 import { withBasePath } from '@/utils/basePath';
+import { MobileMenu } from '@/components/layout/MobileMenu';
 
 export interface NavBarProps {
   className?: string;
 }
 
 export const NavBar: React.FC<NavBarProps> = ({ className = '' }) => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
   const navClasses = [
     styles.navBar,
     className,
@@ -50,36 +44,9 @@ export const NavBar: React.FC<NavBarProps> = ({ className = '' }) => {
           </a>
         </div>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          className={styles.navBar__mobileToggle}
-          onClick={toggleMobileMenu}
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <List size={24} />}
-        </button>
+        {/* Mobile Menu (shared component) */}
+        <MobileMenu />
       </div>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className={styles.navBar__mobileMenu}>
-          <a href={withBasePath('/portfolio')} className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
-            Work
-          </a>
-          <a href={withBasePath('/#why-me')} className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
-            Why me
-          </a>
-          <a href={withBasePath('/#experience')} className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
-            Experience
-          </a>
-          <a href={withBasePath('/#articles')} className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
-            Articles
-          </a>
-          <a href={withBasePath('/projects')} className={styles.navBar__mobileMenuItem} onClick={toggleMobileMenu}>
-            Projects
-          </a>
-        </div>
-      )}
     </nav>
   );
 };

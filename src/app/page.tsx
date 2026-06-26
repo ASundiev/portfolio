@@ -49,7 +49,9 @@ export default function Home() {
 
       {/* Structural column grid backdrop */}
       <div className={styles.gridBg} aria-hidden="true">
-        <span /><span /><span /><span /><span />
+        <div className={styles.gridBg__inner}>
+          <span /><span /><span /><span />
+        </div>
       </div>
 
       {/* Navigation - Outside hero for sticky behavior */}
@@ -66,7 +68,7 @@ export default function Home() {
               Andrey<br />Sundiev
             </h1>
             <p className={styles.hero__description}>
-              I make design a force multiplier: design systems that cut cost, teams that ship, and an AI-first practice that keeps both moving.
+              I build design systems and the teams that run them, and make both pay for themselves.
             </p>
             <div className={styles.hero__actions}>
               <Button
@@ -103,7 +105,6 @@ export default function Home() {
               <span className={styles.hero__portraitCap}>profile-photo.jpg</span>
             </div>
             <div className={styles.hero__spec}>
-              <div className={styles.hero__specHead}>// profile.spec</div>
               <dl className={styles.hero__specList}>
                 <dt>focus</dt><dd>Design leadership · AI</dd>
                 <dt>tenure</dt><dd>13+ yrs in product design</dd>

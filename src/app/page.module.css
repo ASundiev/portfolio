@@ -23,30 +23,30 @@
   will-change: transform;
 }
 
-/* Structural column grid backdrop */
+/* Structural column grid backdrop — load-bearing 4-col, aligned to content */
 .gridBg {
   position: fixed;
   inset: 0;
-  max-width: 1280px;
-  margin: 0 auto;
   padding: 0 var(--spacing-80);
   pointer-events: none;
   z-index: 0;
 }
 
-.gridBg span {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: rgba(10, 10, 10, 0.045);
+.gridBg__inner {
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 
-.gridBg span:nth-child(1) { left: var(--spacing-80); }
-.gridBg span:nth-child(2) { left: 25%; }
-.gridBg span:nth-child(3) { left: 50%; }
-.gridBg span:nth-child(4) { left: 75%; }
-.gridBg span:nth-child(5) { right: var(--spacing-80); }
+.gridBg__inner span {
+  border-left: 1px solid rgba(10, 10, 10, 0.05);
+}
+
+.gridBg__inner span:last-child {
+  border-right: 1px solid rgba(10, 10, 10, 0.05);
+}
 
 /* Keep content above the grid backdrop */
 .hero,
@@ -101,7 +101,7 @@
   width: 100%;
   max-width: 1280px;
   display: grid;
-  grid-template-columns: 1.45fr 0.9fr;
+  grid-template-columns: 1fr 1fr;
   gap: var(--spacing-56);
   align-items: center;
 }
@@ -129,10 +129,10 @@
 
 .hero__name {
   font-family: var(--font-display);
-  font-size: clamp(56px, 8vw, 116px);
+  font-size: clamp(56px, 7.5vw, 104px);
   font-weight: 700;
-  line-height: 0.9;
-  letter-spacing: -0.035em;
+  line-height: 0.88;
+  letter-spacing: -0.045em;
   color: var(--color-ink);
   margin: 0;
   animation: heroReveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s both;

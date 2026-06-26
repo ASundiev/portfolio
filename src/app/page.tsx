@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { NavBar } from '@/components/layout/NavBar';
 import { Footer } from '@/components/layout/Footer';
@@ -25,8 +25,33 @@ export default function Home() {
     setOpenWhyMeIndex(openWhyMeIndex === index ? null : index);
   };
 
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const el = document.documentElement;
+      const max = el.scrollHeight - el.clientHeight;
+      setScrollProgress(max > 0 ? el.scrollTop / max : 0);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <div className={styles.homepage}>
+      {/* Scroll progress hairline */}
+      <div
+        className={styles.scrollProgress}
+        style={{ transform: `scaleX(${scrollProgress})` }}
+        aria-hidden="true"
+      />
+
+      {/* Structural column grid backdrop */}
+      <div className={styles.gridBg} aria-hidden="true">
+        <span /><span /><span /><span /><span />
+      </div>
+
       {/* Navigation - Outside hero for sticky behavior */}
       <NavBar className={styles.homepage__nav} />
 

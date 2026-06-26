@@ -5,8 +5,57 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background: var(--color-white);
+  background: var(--color-paper);
   position: relative;
+}
+
+/* Scroll-progress hairline (agent-native telemetry) */
+.scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  z-index: 200;
+  will-change: transform;
+}
+
+/* Structural column grid backdrop */
+.gridBg {
+  position: fixed;
+  inset: 0;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-80);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.gridBg span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(10, 10, 10, 0.045);
+}
+
+.gridBg span:nth-child(1) { left: var(--spacing-80); }
+.gridBg span:nth-child(2) { left: 25%; }
+.gridBg span:nth-child(3) { left: 50%; }
+.gridBg span:nth-child(4) { left: 75%; }
+.gridBg span:nth-child(5) { right: var(--spacing-80); }
+
+/* Keep content above the grid backdrop */
+.hero,
+.whyMe,
+.portfolioPreview,
+.experience,
+.articles {
+  position: relative;
+  z-index: 1;
 }
 
 /* NavBar on homepage - paper background with blur + hairline */
@@ -39,7 +88,7 @@
 }
 
 .hero {
-  background: var(--color-paper);
+  background: transparent;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -176,7 +225,7 @@
 
 /* Why Me Section */
 .whyMe {
-  background: var(--color-paper);
+  background: transparent;
   width: 100%;
   padding: var(--spacing-88) var(--spacing-80);
   display: flex;
@@ -266,13 +315,31 @@
 
 /* Portfolio Preview Section */
 .portfolioPreview {
-  background: var(--color-white);
+  background: var(--color-ink);
   width: 100%;
-  padding: var(--spacing-80) var(--spacing-80) 0;
+  padding: var(--spacing-80);
   display: flex;
   gap: var(--spacing-8);
   align-items: flex-start;
   justify-content: center;
+  overflow: hidden;
+}
+
+/* Film grain — carried from the portrait, reads on the dark section */
+.portfolioPreview::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.portfolioPreview__content {
+  position: relative;
+  z-index: 1;
 }
 
 .portfolioPreview__content {
@@ -306,11 +373,18 @@
 
 .portfolioPreview__button {
   margin-top: var(--spacing-16);
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  color: #ffffff !important;
+}
+
+.portfolioPreview__button:hover {
+  background: #ffffff !important;
+  color: var(--color-ink) !important;
 }
 
 /* Experience Section */
 .experience {
-  background: var(--color-white);
+  background: transparent;
   width: 100%;
   padding: var(--spacing-80);
   display: flex;
@@ -340,9 +414,9 @@
 
 /* Articles Section */
 .articles {
-  background: var(--color-white);
+  background: transparent;
   width: 100%;
-  padding: 0 var(--spacing-80) var(--spacing-80);
+  padding: var(--spacing-80);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-48);

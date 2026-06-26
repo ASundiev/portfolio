@@ -68,7 +68,7 @@ export default function Home() {
               Andrey<br />Sundiev
             </h1>
             <p className={styles.hero__description}>
-              I build design systems and the teams that run them, and make both pay for themselves.
+              I make design a force multiplier: design systems that cut cost, teams that ship, and an AI-first practice that keeps both moving.
             </p>
             <div className={styles.hero__actions}>
               <Button

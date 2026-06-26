@@ -523,4 +523,9 @@
   .landing__nav {
     display: none;
   }
+
+  /* Hide the hero statement on phones */
+  .landing__statement {
+    display: none;
+  }
 }

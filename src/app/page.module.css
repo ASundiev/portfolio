@@ -418,8 +418,9 @@
   }
 
   .landing__nav {
+    flex-direction: row;
     flex-wrap: wrap;
-    gap: var(--spacing-16);
+    gap: var(--spacing-12) var(--spacing-16);
   }
 
   .landing__railWrap {
@@ -431,10 +432,9 @@
     height: 48vh;
   }
 
-  /* No hover on touch — show titles by default */
+  /* No hover on touch — hide the overlay title (full titles live on the Work page) */
   .rail__title {
-    opacity: 1;
-    transform: translateY(0);
+    display: none;
   }
 
   .landing__bottom {

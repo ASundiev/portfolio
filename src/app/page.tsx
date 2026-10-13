@@ -207,7 +207,7 @@ export default function Home() {
               </a>
               <a href="mailto:inbox@asundiev.com">inbox@asundiev.com</a>
               <a
-                href="https://www.udrop.com/file/Oxm2/Andrei-Sundiev_CV.pdf"
+                href="https://www.udrop.com/file/Qw95/Andrei-Sundiev_CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -329,7 +329,7 @@ export default function Home() {
           <Button
             variant="filled"
             size="xSmall"
-            href="https://www.udrop.com/file/Oxm2/Andrei-Sundiev_CV.pdf"
+            href="https://www.udrop.com/file/Qw95/Andrei-Sundiev_CV.pdf"
             className={styles.experience__button}
           >
             Download full CV
